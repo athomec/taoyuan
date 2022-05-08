@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+  <g id="icon-sign" transform="translate(-5629 -485)">
+    <g id="curvature" transform="translate(5629 446.531)">
+      <path id="Path_402" data-name="Path 402" d="M0,0H2.925V6.286H0Z" transform="translate(10.488 41.537) rotate(-45)" fill="#aba470"/>
+      <path id="Path_403" data-name="Path 403" d="M119.2,119.939l-3.734,2.222-2.19,7.726,4.289-4.279,0-1,1.712-.02.02,1.719-1.017,0-4.295,4.286,7.807-2.251,2.071-3.745Z" transform="translate(-109.509 -77.798)" fill="#aba470"/>
+      <path id="Path_404" data-name="Path 404" d="M3.761,217.892l-.352.352a1.411,1.411,0,0,1-2.04-1.95l.673-.737a2.4,2.4,0,0,0-.075-3.327L.7,210.966l-.7.7,1.263,1.263a1.409,1.409,0,0,1,.044,1.95l-.673.737a2.408,2.408,0,0,0,3.48,3.327l.352-.351h0Z" transform="translate(0 -165.802)" fill="#aba470"/>
+    </g>
+    <rect id="Rectangle_299" data-name="Rectangle 299" width="17" height="17" transform="translate(5629 485)" fill="none"/>
+  </g>
+</svg>

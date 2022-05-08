@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="icon-user" transform="translate(0.111)">
+    <rect id="Rectangle_252" data-name="Rectangle 252" width="25" height="25" transform="translate(-0.111)" fill="none"/>
+    <g id="profile-user" transform="translate(3.889 4)">
+      <path id="Path_372" data-name="Path 372" d="M8.5,0A8.5,8.5,0,1,0,17,8.5,8.5,8.5,0,0,0,8.5,0Zm0,2.541A2.811,2.811,0,1,1,5.689,5.354,2.812,2.812,0,0,1,8.5,2.542Zm0,12.236a6.238,6.238,0,0,1-4.062-1.5,1.2,1.2,0,0,1-.42-.911A2.835,2.835,0,0,1,6.865,9.535h3.271a2.831,2.831,0,0,1,2.845,2.835,1.2,1.2,0,0,1-.42.91A6.236,6.236,0,0,1,8.5,14.778Z" transform="translate(0 -0.001)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

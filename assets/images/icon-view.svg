@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="icon-view" transform="translate(-181 -19)">
+    <rect id="Rectangle_284" data-name="Rectangle 284" width="24" height="24" transform="translate(181 19)" fill="none"/>
+    <g id="eye" transform="translate(182 -74.725)">
+      <path id="Path_390" data-name="Path 390" d="M11,98.725c-4.2,0-8.015,2.3-10.828,6.035a.871.871,0,0,0,0,1.04c2.813,3.74,6.625,6.039,10.828,6.039s8.015-2.3,10.828-6.035a.871.871,0,0,0,0-1.04C19.015,101.025,15.2,98.725,11,98.725Zm.3,11.174a4.627,4.627,0,1,1,4.316-4.316A4.63,4.63,0,0,1,11.3,109.9Zm-.14-2.133a2.492,2.492,0,1,1,2.327-2.327A2.487,2.487,0,0,1,11.162,107.766Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

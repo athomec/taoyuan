@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1841" height="1212" viewBox="0 0 1841 1212">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_123" data-name="Rectangle 123" width="1841" height="1212" transform="translate(34 1860)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="bbg-line" transform="translate(-34 -1860)" opacity="0.54" clip-path="url(#clip-path)">
+    <g id="Group_2247" data-name="Group 2247">
+      <g id="Group_2245" data-name="Group 2245" transform="translate(-476 418)">
+        <g id="Group_2244" data-name="Group 2244" transform="translate(510.158 1218)">
+          <rect id="Rectangle_115" data-name="Rectangle 115" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 999.053)" fill="#fff"/>
+          <rect id="Rectangle_121" data-name="Rectangle 121" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 770.053)" fill="#fff"/>
+          <rect id="Rectangle_122" data-name="Rectangle 122" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 542.053)" fill="#fff"/>
+          <rect id="Rectangle_116" data-name="Rectangle 116" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 1227.053)" fill="#fff"/>
+          <rect id="Rectangle_117" data-name="Rectangle 117" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 1456.053)" fill="#fff"/>
+          <rect id="Rectangle_118" data-name="Rectangle 118" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 1684.053)" fill="#fff"/>
+          <rect id="Rectangle_119" data-name="Rectangle 119" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 1913.053)" fill="#fff"/>
+          <rect id="Rectangle_120" data-name="Rectangle 120" width="1" height="2103" transform="matrix(-0.485, -0.875, 0.875, -0.485, 1.939, 2141.053)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_2246" data-name="Group 2246" transform="translate(34.158 1155)">
+        <g id="Group_2244-2" data-name="Group 2244" transform="translate(0)">
+          <rect id="Rectangle_115-2" data-name="Rectangle 115" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 460.499)" fill="#fff"/>
+          <rect id="Rectangle_121-2" data-name="Rectangle 121" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 231.499)" fill="#fff"/>
+          <rect id="Rectangle_122-2" data-name="Rectangle 122" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 3.499)" fill="#fff"/>
+          <rect id="Rectangle_116-2" data-name="Rectangle 116" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 688.499)" fill="#fff"/>
+          <rect id="Rectangle_117-2" data-name="Rectangle 117" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 917.499)" fill="#fff"/>
+          <rect id="Rectangle_118-2" data-name="Rectangle 118" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 1145.499)" fill="#fff"/>
+          <rect id="Rectangle_119-2" data-name="Rectangle 119" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 1374.499)" fill="#fff"/>
+          <rect id="Rectangle_120-2" data-name="Rectangle 120" width="1" height="2103" transform="matrix(0.485, -0.875, 0.875, 0.485, 0, 1602.499)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

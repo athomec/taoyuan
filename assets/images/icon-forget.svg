@@ -1,0 +1,8 @@
+<svg id="icon-forget" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <rect id="Rectangle_251" data-name="Rectangle 251" width="26" height="26" fill="none"/>
+  <g id="question" transform="translate(4 4)">
+    <g id="Group_104" data-name="Group 104">
+      <path id="Path_371" data-name="Path 371" d="M9,0a9,9,0,1,0,9,9A9.035,9.035,0,0,0,9,0ZM9,15.328a1.055,1.055,0,1,1,1.055-1.055A1.055,1.055,0,0,1,9,15.328Zm1.869-6.94a1.81,1.81,0,0,0-.814,1.389v.278a1.055,1.055,0,0,1-2.109,0V9.777A3.861,3.861,0,0,1,9.621,6.688a1.054,1.054,0,1,0-1.676-.852,1.055,1.055,0,0,1-2.109,0,3.164,3.164,0,1,1,5.033,2.552Z" fill="#9fbb3b"/>
+    </g>
+  </g>
+</svg>
