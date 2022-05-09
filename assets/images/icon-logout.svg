@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-  <g id="icon-logout" transform="translate(0.111)">
-    <rect id="Rectangle_252" data-name="Rectangle 252" width="25" height="25" transform="translate(-0.111)" fill="none"/>
-    <g id="Glyph" transform="translate(2.889 3)">
-      <path id="Path_384" data-name="Path 384" d="M9.5,1A8.5,8.5,0,1,0,18,9.5,8.5,8.5,0,0,0,9.5,1ZM8.727,14.136H7.182a2.318,2.318,0,0,1-2.318-2.318V7.182A2.318,2.318,0,0,1,7.182,4.864H8.727a.773.773,0,0,1,0,1.545H7.182a.773.773,0,0,0-.773.773v4.636a.773.773,0,0,0,.773.773H8.727a.773.773,0,0,1,0,1.545Zm5.183-4.09-1.545,1.545A.773.773,0,1,1,11.272,10.5l.226-.226H7.955a.773.773,0,0,1,0-1.545H11.5L11.272,8.5a.773.773,0,1,1,1.093-1.093L13.91,8.954a.773.773,0,0,1,0,1.093Z" transform="translate(0 0)" fill="#cbcbcb"/>
-    </g>
-  </g>
-</svg>

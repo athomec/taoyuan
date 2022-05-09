@@ -12048,7 +12048,7 @@ input::placeholder {
   -o-transition: none;
   transition: none;
   opacity: 0.6;
-  text-indent: 200%;
+  text-indent: -9999px;
   overflow: hidden;
   white-space: nowrap; }
   .play-btn-small {
@@ -13061,7 +13061,7 @@ input::placeholder {
   display: block;
   width: 20px;
   height: 19px;
-  text-indent: 200%;
+  text-indent: -9999px;
   overflow: hidden;
   white-space: nowrap; }
   .favorite-lg {
@@ -13380,7 +13380,7 @@ input::placeholder {
     margin-bottom: 5px;
     background: url(../images/page-logo.svg) no-repeat;
     background-size: contain;
-    text-indent: 200%;
+    text-indent: -9999px;
     overflow: hidden;
     white-space: nowrap; }
   .navbar-info {
@@ -13711,18 +13711,13 @@ hr {
     width: 100%;
     max-width: 528px; }
   .login-title {
-    font-size: 3em;
-    letter-spacing: 0;
-    text-align: center; }
-    @media (max-width: 1200px) {
-      .login-title {
-        font-size: 2.5em; } }
-    @media (max-width: 768px) {
-      .login-title {
-        font-size: 1.8em; } }
-    @media (max-width: 576px) {
-      .login-title {
-        font-size: 1.4em; } }
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: 60px;
+    background: url("../images/title.svg") no-repeat;
+    background-size: 100%; }
   .login input {
     border-radius: 50rem;
     border: none;
