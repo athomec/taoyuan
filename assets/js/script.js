@@ -11,6 +11,7 @@ $(function () {//JS開頭
 
 	//---------------------側邊選單設定------------------------
 	$(".js-info-opener").click(function () {
+		$(".js-side-info").removeClass('open');
 		let content = $(this).attr("data-target");
 		$(".js-handler").addClass('open');
 		$(".js-map-content").addClass('open');

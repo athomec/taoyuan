@@ -14304,6 +14304,10 @@ hr {
       .footable .footable-details tbody td {
         text-align: left; }
 
+.info-table-wrapper {
+  height: calc(100% - 80px);
+  overflow: auto; }
+
 /*-----------------------單元2開始----------------------------*/
 .section2 {
   background: url(../images/bg2.jpg) fixed #999;
