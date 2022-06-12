@@ -13835,9 +13835,6 @@ input::placeholder {
   background: -o-linear-gradient(left, #8DC87D 0%, #DEF3D2 100%);
   background: linear-gradient(to right, #8DC87D 0%, #DEF3D2 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  @media (max-width: 768px) {
-    .navbar {
-      background: #8DC87D; } }
   .navbar-brand {
     height: 35px;
     padding: 0;
