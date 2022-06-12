@@ -91,8 +91,8 @@
                 </div>
             </div>
             <div class="modal-footer border-0 pt-0">
-                <button type="button" class="btn btn-sm btn-dark-primary-weak-color px-5 mx-auto my-0"
-                    data-target="ture" data-bs-dismiss="modal">查詢</button>
+                <button type="button" class="btn btn-sm btn-dark-primary-weak-color px-5 mx-auto my-0 js-info-opener"
+                    data-target="#hasinfo" data-bs-dismiss="modal">查詢</button>
             </div>
         </div>
     </div>
@@ -997,31 +997,31 @@
                         <div class="accordion-body">
                             <ul>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
-                                        <img src="./assets/images/ic-danger.svg" alt="有無違反法令"
-                                            class="me-2"><span>有無違反法令</span>
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal" data-bs-target="#info-search">
+                                        <img src="./assets/images/ic-danger.svg" alt="有無違反法令" class="me-2">
+                                        <span>有無違反法令</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal" data-bs-target="#info-search">
                                         <img src="./assets/images/ic-forbidden.svg" alt="無權占用"
                                             class="me-2"><span>無權占用</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal" data-bs-target="#info-search">
                                         <img src="./assets/images/ic-estate.svg" alt="機關不動產"
                                             class="me-2"><span>機關不動產</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal" data-bs-target="#info-search">
                                         <img src="./assets/images/ic-risk.svg" alt="登革熱高風險"
                                             class="me-2"><span>登革熱高風險</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal" data-bs-target="#info-search">
                                         <img src="./assets/images/ic-emergency.svg" alt="緊急通報"
                                             class="me-2"><span>緊急通報</span>
                                     </button>
@@ -1076,15 +1076,16 @@
         </div>
         <!-----資料標題開始----->
         <div class="side-info-header bg-primary-weak-color white js-handler">
-            <img src="./assets/images/ic-domain.svg" alt="不動產巡查icon" class="me-1"> <span>title</span>資料
+            <img src="./assets/images/ic-risk.svg" alt="登革熱高風險icon" class="me-1"> 登革熱高風險資料
+            <button class="btn p-0 ms-auto js-info-closer"><img src="./assets/images/ic-close-light.svg" alt="關閉icon"></button>
         </div>
         <!-----查無資料開始----->
         <div class="side-info js-side-info bg-pale-color scroll" id="noinfo">
-            <div class="side-info-body">
-                <div class="row justify-content-between align-items-center flex-wrap g-0">
+            <div class="side-info-body h-100">
+                <div class="row justify-content-between align-items-center flex-wrap g-0 h-100">
                     <div class="col-md-6 d-flex font-xs mb-3">
-                        <p class="tertiary-color me-3">今日巡查筆數:0</p>
-                        <p class="tertiary-color">累積巡查筆數:0</p>
+                        <p class="tertiary-color me-3">今日巡查筆數：0</p>
+                        <p class="tertiary-color">累積巡查筆數：0</p>
                     </div>
                     <div class="col-md-6 d-flex mb-3">
                         <div class="input-group btn-input-group ms-auto me-2">
@@ -1098,7 +1099,7 @@
                             <img src="./assets/images/ic-filter.svg" alt="清除圖層icon">
                         </a>
                     </div>
-                    <div class="col-12 d-flex bg-white py-4 py-md-5 base-light-color font-md justify-content-center">
+                    <div class="col-12 notice-box bg-white tertiary-color" data-content="search-no-info">
                         <img src="./assets/images/ic-search-off.svg" alt="查無相關資料icon"> 查無相關資料
                     </div>
                 </div>

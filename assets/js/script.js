@@ -11,19 +11,15 @@ $(function () {//JS開頭
 
 	//---------------------側邊選單設定------------------------
 	$(".js-info-opener").click(function () {
-		let title = $(this).find("span").text();
-		let icon = $(this).find("img").attr("src");
 		let content = $(this).attr("data-target");
-		//開啟資料標題
-		$(".js-handler").find("span").text(title);
-		$(".js-handler").find("img").attr("src", icon);
-		$(".js-handler").toggleClass('open');
-		//地圖收起
-		$(".js-map-content").toggleClass('open');
-		
-		//目標是否有資料
-		$(content).toggleClass('open');
-		console.log(content)
+		$(".js-handler").addClass('open');
+		$(".js-map-content").addClass('open');
+		$(content).addClass('open');
+	})
+	$(".js-info-closer").click(function () {
+		$(".js-handler").removeClass('open');
+		$(".js-map-content").removeClass('open');
+		$(".js-side-info").removeClass('open');
 	})
 	$(".js-side-menu-toggler").click(function () {
 		$('.js-side-menu').toggleClass("close");

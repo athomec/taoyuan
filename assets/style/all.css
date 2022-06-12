@@ -12704,6 +12704,8 @@ input::placeholder {
   .notice-box[data-content="export-none"] {
     border: 1px solid #F0F0F0;
     border-radius: 5px; }
+  .notice-box[data-content="search-no-info"] {
+    height: calc(100% - 68px); }
 
 /*---------------------表格樣式---------------------*/
 .table-bd-primary-color th,
@@ -14179,7 +14181,7 @@ footer .footer-logo {
     max-width: 350px; }
 
 .side-info-header {
-  padding: 7px 32px;
+  padding: 7px 24px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-box-flex: 0;
@@ -14187,9 +14189,6 @@ footer .footer-logo {
           flex-grow: 0;
   cursor: ns-resize;
   display: none; }
-  @media (max-width: 768px) {
-    .side-info-header {
-      padding: 7px 24px; } }
   @media (max-width: 420px) {
     .side-info-header {
       padding: 7px 10px; } }
@@ -14202,10 +14201,7 @@ footer .footer-logo {
     display: flex; }
 
 .side-info-body {
-  padding: 15px 32px; }
-  @media (max-width: 768px) {
-    .side-info-body {
-      padding: 15px 24px; } }
+  padding: 15px 24px; }
   @media (max-width: 420px) {
     .side-info-body {
       padding: 10px; } }
