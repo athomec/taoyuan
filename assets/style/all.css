@@ -10876,6 +10876,7 @@ input::placeholder {
           justify-content: space-between; }
   @media (max-width: 576px) {
     .modal-header {
+      padding: 10px 12px;
       -webkit-box-orient: vertical;
       -webkit-box-direction: reverse;
           -ms-flex-direction: column-reverse;
