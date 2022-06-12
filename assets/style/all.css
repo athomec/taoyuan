@@ -14308,7 +14308,8 @@ hr {
         text-align: right;
         vertical-align: middle; }
       .footable .footable-details tbody td {
-        text-align: left; }
+        text-align: left;
+        height: 40px; }
 
 .info-table-wrapper {
   height: calc(100% - 50px);
@@ -14316,7 +14317,7 @@ hr {
   .info-table-wrapper thead {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: -2px;
     z-index: 10; }
 
 /*-----------------------單元2開始----------------------------*/
