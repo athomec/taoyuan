@@ -13898,7 +13898,11 @@ input::placeholder {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    border-bottom: 1px solid #DEF3D2; } }
+    border-bottom: 1px solid #DEF3D2; }
+    .nav-item:nth-child(2) .nav-link {
+      border-radius: 8px 8px 0 0; }
+    .nav-item:last-child .nav-link {
+      border-radius: 0 0 8px 8px; } }
 
 .nav-link {
   padding: 4px 8px; }
@@ -13908,7 +13912,12 @@ input::placeholder {
       display: -ms-flexbox;
       display: flex;
       color: #fff;
-      padding: 10px 0; }
+      padding: 10px 0;
+      width: 100%;
+      background: #6DA95C;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
       .nav-link:hover {
         color: #fff; }
       .nav-link img {
