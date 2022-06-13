@@ -570,7 +570,8 @@
                         </a>
                     </li>
                     <li class="nav-item js-tag-button">
-                        <a class="nav-link" href="#" title="個人資料">
+                        <a class="nav-link" href="#" title="個人資料" data-bs-toggle="modal"
+                            data-bs-target="#info-personal">
                             <img src="./assets/images/ic-account-circle.svg" alt="個人資料">
                             <p class="d-inline-block d-md-none">個人資料</p>
                         </a>
@@ -793,31 +794,36 @@
                         <div class="accordion-body">
                             <ul>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
-                                        <img src="./assets/images/ic-danger.svg" alt="有無違反法令"
-                                            class="me-2"><span>有無違反法令</span>
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                        data-bs-target="#info-search">
+                                        <img src="./assets/images/ic-danger.svg" alt="有無違反法令" class="me-2">
+                                        <span>有無違反法令</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                        data-bs-target="#info-search">
                                         <img src="./assets/images/ic-forbidden.svg" alt="無權占用"
                                             class="me-2"><span>無權占用</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                        data-bs-target="#info-search">
                                         <img src="./assets/images/ic-estate.svg" alt="機關不動產"
                                             class="me-2"><span>機關不動產</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                        data-bs-target="#info-search">
                                         <img src="./assets/images/ic-risk.svg" alt="登革熱高風險"
                                             class="me-2"><span>登革熱高風險</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-item btn d-flex js-info-opener" data-target="#hasinfo">
+                                    <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                        data-bs-target="#info-search">
                                         <img src="./assets/images/ic-emergency.svg" alt="緊急通報"
                                             class="me-2"><span>緊急通報</span>
                                     </button>
@@ -872,15 +878,17 @@
         </div>
         <!-----資料標題開始----->
         <div class="side-info-header bg-primary-weak-color white js-handler">
-            <img src="./assets/images/ic-domain.svg" alt="不動產巡查icon" class="me-1"> <span>title</span>資料
+            <img src="./assets/images/ic-risk.svg" alt="登革熱高風險icon" class="me-1"> 登革熱高風險資料
+            <button class="btn p-0 ms-auto js-info-closer"><img src="./assets/images/ic-close-light.svg"
+                    alt="關閉icon"></button>
         </div>
         <!-----查無資料開始----->
         <div class="side-info js-side-info bg-pale-color scroll" id="noinfo">
-            <div class="side-info-body">
-                <div class="row justify-content-between align-items-center flex-wrap g-0">
+            <div class="side-info-body h-100">
+                <div class="row justify-content-between align-items-center flex-wrap g-0 h-100">
                     <div class="col-md-6 d-flex font-xs mb-3">
-                        <p class="tertiary-color me-3">今日巡查筆數:0</p>
-                        <p class="tertiary-color">累積巡查筆數:0</p>
+                        <p class="tertiary-color me-3">今日巡查筆數：0</p>
+                        <p class="tertiary-color">累積巡查筆數：0</p>
                     </div>
                     <div class="col-md-6 d-flex mb-3">
                         <div class="input-group btn-input-group ms-auto me-2">
@@ -894,7 +902,7 @@
                             <img src="./assets/images/ic-filter.svg" alt="清除圖層icon">
                         </a>
                     </div>
-                    <div class="col-12 d-flex bg-white py-4 py-md-5 base-light-color font-md justify-content-center">
+                    <div class="col-12 notice-box bg-white tertiary-color" data-content="search-no-info">
                         <img src="./assets/images/ic-search-off.svg" alt="查無相關資料icon"> 查無相關資料
                     </div>
                 </div>
@@ -902,9 +910,9 @@
         </div>
         <!-----查無資料結束----->
         <!-----查有資料開始----->
-        <div class="side-info js-side-info bg-pale-color scroll" id="hasinfo">
-            <div class="side-info-body">
-                <div class="row justify-content-between align-items-center flex-wrap g-0">
+        <div class="side-info js-side-info bg-pale-color" id="hasinfo">
+            <div class="side-info-body h-100">
+                <div class="row g-0">
                     <div class="col-sm-6 d-flex font-xs mb-3">
                         <button class="btn btn-sm btn-dark-secondary-xdark-color rounded-pill me-2"
                             data-bs-toggle="modal" data-bs-target="#info-export">
@@ -923,110 +931,242 @@
                                 <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
                             </button>
                         </div>
-                        <a href="#" class="btn circle-btn  btn-dark-primary-color p-0" title="清除圖層">
-                            <img src="./assets/images/ic-filter.svg" alt="清除圖層icon">
+                        <a href="#filter-box"
+                            class="btn circle-btn btn-dark-secondary-color p-0 filter-btn js-filter-btn" title="篩選"
+                            data-bs-toggle="collapse">
+                            <img src="./assets/images/ic-filter.svg" alt="篩選icon">
                         </a>
+                        <div class="collapse" id="filter-box">
+                            <div class="row p-3 font-xs">
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-photo">
+                                        <label class="form-check-label" for="filter-photo">
+                                            照片數
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-property">
+                                        <label class="form-check-label" for="filter-property">
+                                            財產別
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-check">
+                                        <label class="form-check-label" for="filter-check">
+                                            巡查時間
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-member">
+                                        <label class="form-check-label" for="filter-member">
+                                            巡查人員
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-city">
+                                        <label class="form-check-label" for="filter-city">
+                                            縣市
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-town">
+                                        <label class="form-check-label" for="filter-town">
+                                            鄉鎮市區
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-lot">
+                                        <label class="form-check-label" for="filter-lot">
+                                            地段
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-number">
+                                        <label class="form-check-label" for="filter-number">
+                                            地號
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-coordinate">
+                                        <label class="form-check-label" for="filter-coordinate">
+                                            座標
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="filter-building">
+                                        <label class="form-check-label" for="filter-building">
+                                            地上物
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <!--<th data-breakpoints="xs sm md" data-title="DOB">Date of Birth</th>-->
-                                    <th data-breakpoints="xs">年度</th>
-                                    <th data-breakpoints="xs">照片數</th>
-                                    <th data-breakpoints="xs">巡查時間</th>
-                                    <th data-breakpoints="xs">巡查人員</th>
-                                    <th data-breakpoints="xs sm md">縣市</th>
-                                    <th width="100">鄉鎮市區</th>
-                                    <th width="100">地段</th>
-                                    <th width="100">地號</th>
-                                    <th data-breakpoints="xs sm md">村里別</th>
-                                    <th data-breakpoints="xs sm md">使用人</th>
-                                    <th data-breakpoints="xs">風險分級</th>
-                                    <th width="100" data-breakpoints="xs"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>111</td>
-                                    <td>2</td>
-                                    <td>2022-04-26 16:20</td>
-                                    <td>王曉明</td>
-                                    <td>台中市</td>
-                                    <td>西屯區</td>
-                                    <td>地段地段</td>
-                                    <td>153</td>
-                                    <td>村里別</td>
-                                    <td>使用人</td>
-                                    <td>2</td>
-                                    <td>
-                                        <button class="btn p-1" title="檢視" data-bs-toggle="modal"
-                                            data-bs-target="#info-view">
-                                            <img src="./assets/images/ic-view.svg" alt="檢視icon">
-                                        </button>
-                                        <button class="btn p-1" title="編輯" data-bs-toggle="modal"
-                                            data-bs-target="#info-edit">
-                                            <img src="./assets/images/ic-edit.svg" alt="檢視icon">
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>111</td>
-                                    <td>2</td>
-                                    <td>2022-04-26 16:20</td>
-                                    <td>王曉明</td>
-                                    <td>台中市</td>
-                                    <td>西屯區</td>
-                                    <td>地段地段</td>
-                                    <td>153</td>
-                                    <td>村里別</td>
-                                    <td>使用人</td>
-                                    <td>2</td>
-                                    <td>
-                                        <button class="btn p-1" title="檢視" data-bs-toggle="modal"
-                                            data-bs-target="#info-view">
-                                            <img src="./assets/images/ic-view.svg" alt="檢視icon">
-                                        </button>
-                                        <button class="btn p-1" title="編輯" data-bs-toggle="modal"
-                                            data-bs-target="#info-edit">
-                                            <img src="./assets/images/ic-edit.svg" alt="檢視icon">
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>111</td>
-                                    <td>2</td>
-                                    <td>2022-04-26 16:20</td>
-                                    <td>王曉明</td>
-                                    <td>台中市</td>
-                                    <td>西屯區</td>
-                                    <td>地段地段</td>
-                                    <td>153</td>
-                                    <td>村里別</td>
-                                    <td>使用人</td>
-                                    <td>2</td>
-                                    <td>
-                                        <button class="btn p-1" title="檢視" data-bs-toggle="modal"
-                                            data-bs-target="#info-view">
-                                            <img src="./assets/images/ic-view.svg" alt="檢視icon">
-                                        </button>
-                                        <button class="btn p-1" title="編輯" data-bs-toggle="modal"
-                                            data-bs-target="#info-edit">
-                                            <img src="./assets/images/ic-edit.svg" alt="檢視icon">
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                </div>
+                <div class="info-table-wrapper scroll">
+                    <table class="table mb-0" data-toggle-column="last">
+                        <thead>
+                            <tr>
+                                <!--<th data-breakpoints="xs sm md" data-title="DOB">Date of Birth</th>-->
+                                <th data-breakpoints="xs">年度</th>
+                                <th data-breakpoints="xs sm">照片數</th>
+                                <th data-breakpoints="xs">巡查時間</th>
+                                <th data-breakpoints="xs sm">巡查人員</th>
+                                <th data-breakpoints="xs sm md">縣市</th>
+                                <th width="100">鄉鎮市區</th>
+                                <th width="100">地段</th>
+                                <th width="100">地號</th>
+                                <th data-breakpoints="xs sm md">村里別</th>
+                                <th data-breakpoints="xs sm md">使用人</th>
+                                <th data-breakpoints="xs">風險分級</th>
+                                <th width="180" data-breakpoints="xs"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>111</td>
+                                <td>2</td>
+                                <td>2022-04-26 16:20</td>
+                                <td>王曉明</td>
+                                <td>台中市</td>
+                                <td>西屯區</td>
+                                <td>地段地段</td>
+                                <td>153</td>
+                                <td>村里別</td>
+                                <td>使用人</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="btn p-1" title="檢視" data-bs-toggle="modal"
+                                        data-bs-target="#info-view">
+                                        <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                                    </button>
+                                    <button class="btn p-1" title="編輯" data-bs-toggle="modal"
+                                        data-bs-target="#info-edit">
+                                        <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>111</td>
+                                <td>2</td>
+                                <td>2022-04-26 16:20</td>
+                                <td>王曉明</td>
+                                <td>台中市</td>
+                                <td>西屯區</td>
+                                <td>地段地段</td>
+                                <td>153</td>
+                                <td>村里別</td>
+                                <td>使用人</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="btn p-1" title="檢視" data-bs-toggle="modal"
+                                        data-bs-target="#info-view">
+                                        <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                                    </button>
+                                    <button class="btn p-1" title="編輯" data-bs-toggle="modal"
+                                        data-bs-target="#info-edit">
+                                        <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>111</td>
+                                <td>2</td>
+                                <td>2022-04-26 16:20</td>
+                                <td>王曉明</td>
+                                <td>台中市</td>
+                                <td>西屯區</td>
+                                <td>地段地段</td>
+                                <td>153</td>
+                                <td>村里別</td>
+                                <td>使用人</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="btn p-1" title="檢視" data-bs-toggle="modal"
+                                        data-bs-target="#info-view">
+                                        <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                                    </button>
+                                    <button class="btn p-1" title="編輯" data-bs-toggle="modal"
+                                        data-bs-target="#info-edit">
+                                        <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>111</td>
+                                <td>2</td>
+                                <td>2022-04-26 16:20</td>
+                                <td>王曉明</td>
+                                <td>台中市</td>
+                                <td>西屯區</td>
+                                <td>地段地段</td>
+                                <td>153</td>
+                                <td>村里別</td>
+                                <td>使用人</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="btn p-1" title="檢視" data-bs-toggle="modal"
+                                        data-bs-target="#info-view">
+                                        <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                                    </button>
+                                    <button class="btn p-1" title="編輯" data-bs-toggle="modal"
+                                        data-bs-target="#info-edit">
+                                        <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>111</td>
+                                <td>2</td>
+                                <td>2022-04-26 16:20</td>
+                                <td>王曉明</td>
+                                <td>台中市</td>
+                                <td>西屯區</td>
+                                <td>地段地段</td>
+                                <td>153</td>
+                                <td>村里別</td>
+                                <td>使用人</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="btn p-1" title="檢視" data-bs-toggle="modal"
+                                        data-bs-target="#info-view">
+                                        <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                                    </button>
+                                    <button class="btn p-1" title="編輯" data-bs-toggle="modal"
+                                        data-bs-target="#info-edit">
+                                        <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <!-----查有資料結束----->
     </div>
-    <!-----主要內容結束----->
+    <!-----查有資料結束----->
 </div>
-
+<!-----主要內容結束----->
+</div>
 		
 		<!-- SCRIPTS -->
 		<script src="assets/js/jquery-3.3.1.min.js"></script>
