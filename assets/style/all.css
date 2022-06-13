@@ -13964,7 +13964,7 @@ footer .footer-logo {
   margin-top: 54px;
   padding-top: 30px;
   width: 350px;
-  min-height: calc(100vh - 54px);
+  height: calc(100vh - 54px);
   position: fixed;
   left: 0;
   -webkit-transition: all 0.2s ease;
@@ -13989,6 +13989,9 @@ footer .footer-logo {
       -webkit-transform: rotate(180deg);
           -ms-transform: rotate(180deg);
               transform: rotate(180deg); }
+  .side-menu .side-menu-body {
+    height: calc(100% - 50px);
+    overflow: auto; }
   .side-menu .accordion-collapse {
     padding: 0 15px; }
     @media (max-width: 1200px) {
@@ -14000,6 +14003,9 @@ footer .footer-logo {
     @media (max-width: 1200px) {
       .side-menu .accordion-header {
         padding: 10px 8px 0 8px; } }
+    @media (max-width: 768px) {
+      .side-menu .accordion-header {
+        padding: 6px 8px 0 8px; } }
   .side-menu .accordion-button {
     font-size: 1.125em;
     padding: 10px 16px 10px 24px;
@@ -14010,6 +14016,9 @@ footer .footer-logo {
         padding: 8px 8px 8px 16px;
         font-size: 1em;
         margin-bottom: 8px; } }
+    @media (max-width: 768px) {
+      .side-menu .accordion-button {
+        margin-bottom: 6px; } }
     .side-menu .accordion-button::after {
       width: 24px;
       background: url("../images/ic-arrow.svg");
