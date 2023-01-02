@@ -21,6 +21,41 @@
 </head>
 
 <body>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
 	<div class="wrapper" data-bg="login">
 	<div class="container">
 		<div class="row gx-0 justify-content-center justify-content-lg-start">
@@ -76,37 +111,6 @@
 		</div>
 	</div>
 </div>
-		
-		<!-- SCRIPTS -->
-		<script src="assets/js/jquery-3.3.1.min.js"></script>
-		<script src="assets/js/bootstrap.bundle.js"></script>
-		<script src="assets/js/script.js"></script>
-		<script src="assets/js/footable.js"></script>
-		<script src="assets/js/moment-with-locales.min.js"></script>
-		<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
-		<script type="text/javascript">
-			$('.table').footable();
-
-			$(function () {
-				$('#export-from').datetimepicker({
-					format: 'L',
-					locale: 'zh-tw',
-					defaultDate: new Date(),  
-				});
-				$('#export-to').datetimepicker({
-					format: 'L',
-					locale: 'zh-tw',
-					defaultDate: new Date(),
-				});
-
-				/*匯出視窗-未輸入條件示意*/
-				$('#info-export-default').modal("show");
-				/*匯出視窗-查無資料示意*/
-				$('#info-export-noinfo').modal("show");
-				/*個人資料視窗-編輯示意*/
-				$('#info-personal-edit').modal("show");
-			});
-		</script>
 </body>
 
 </html>

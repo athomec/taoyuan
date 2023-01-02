@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<title>行政院農業委員會農田水利署桃園管理處 - 不動產巡查資訊管理系統</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="行政院農業委會員農田水利署桃園管理處,不動產巡查資訊管理系統,管理系統,不動產巡查">
+	<meta name="description" content="不動產巡查資訊管理系統" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:site_name" content="不動產巡查資訊管理系統" />
+	<meta property="og:image" content="assets/images/fb-img.png" />
+	<!--FB分享設定-->
+
+	<link rel="icon" href="assets/images/favicon.png" type="image/ico" />
+	<!--iconfont設定-->
+	<link rel="stylesheet" href="assets/style/all.css">
+	<!--css設定-->
+</head>
+
+<body>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
+	<div class="modal-header" data-txt="less">
+    <h5 class="modal-title"><img src="./assets/images/ic-person.svg" alt="條件查詢icon" class="mt-1"> 個人資料</h5>
+    <div class="d-flex align-items-center ms-auto">
+        <button class="btn btn-sm btn-dark-secondary-xdark-color py-0 ms-auto me-5">
+            <img src="./assets/images/ic-ok.svg" alt="確認" class="me-1">確認
+        </button>
+    </div>
+</div>
+<div class="modal-body px-0 px-md-4">
+    <div class="container">
+        <div class="row">
+            <h6 class="modal-body-title d-flex align-items-center mb-2">
+                <img src="./assets/images/ic-sticky-note.svg" alt="基本資料icon" class="me-1"> 使用者資料
+            </h6>
+        </div>
+        <div class="bg-primary-xxlight-color p-3 mb-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="personal-name" class="me-2">名稱</label>
+                        <input class="form-control" type="text" value="testuser"
+                            style="width: calc(100% - 50px)" id="personal-name" readonly>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="personal-account" class="me-2">帳號</label>
+                        <input class="form-control" type="text" value="testuser"
+                            style="width: calc(100% - 50px)" id="personal-account" readonly>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="personal-department" class="me-2">部門</label>
+                        <input class="form-control" type="text" value="群立科技"
+                            style="width: calc(100% - 50px)" id="personal-department" readonly>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="personal-mail" class="me-2">信箱</label>
+                        <input class="form-control" type="text" value="testuser@geoforce.com.tw"
+                            style="width: calc(100% - 50px)" id="personal-mail">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h6 class="modal-body-title d-flex align-items-center mb-2">
+                <img src="./assets/images/ic-password-lock.svg" alt="修改密碼icon" class="me-1"> 修改密碼
+            </h6>
+        </div>
+        <div class="bg-primary-xxlight-color p-3 mb-2">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="personal-old-password" class="me-2">舊密碼</label>
+                        <input class="form-control" type="text" value="******"
+                            style="width: calc(100% - 80px)" id="personal-old-password">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="personal-new-password" class="me-2">新密碼</label>
+                        <input class="form-control" type="text" value="******"
+                            style="width: calc(100% - 80px)" id="personal-new-password">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="personal-confirm" class="me-2">確認密碼</label>
+                        <input class="form-control" type="text" value="******"
+                            style="width: calc(100% - 80px)" id="personal-confirm">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="primary-color font-xs mb-2">
+            ※ 密碼必須至少有8個字元<br>
+            ※ 密碼必須包含至少1個數字 、大寫與小寫英文字母
+        </p>
+    </div>
+</div>
+</body>
+
+</html>

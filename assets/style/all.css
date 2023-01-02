@@ -10778,8 +10778,26 @@ body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", "sans-serif";
   line-height: 1.5;
   letter-spacing: 1px;
-  color: #555; }
+  color: #555;
+  font-size: 1.1em; }
 
+/* --------------字級加大開始--------------- */
+.btn, .form-select {
+  font-size: 1em; }
+
+.login .btn {
+  font-size: 1.2em; }
+
+.modal-body-title {
+  font-size: 1.125em; }
+
+.circle-btn {
+  width: 36px !important;
+  height: 36px !important;
+  -ms-flex-preferred-size: 36px !important;
+      flex-basis: 36px !important; }
+
+/* --------------字級加大結束--------------- */
 .clear {
   clear: both;
   height: 0;
@@ -10871,6 +10889,19 @@ input::placeholder {
   .container {
     max-width: 800px; } }
 
+.modal-content {
+  overflow: hidden;
+  position: relative; }
+  .modal-content .btn-close {
+    background: url("../images/ic-cross.svg") center;
+    background-size: 24px;
+    opacity: 1;
+    position: absolute;
+    right: 10px;
+    top: 11px; }
+    .modal-content .btn-close:hover {
+      opacity: 0.7; }
+
 .modal-header {
   padding: 10px 24px;
   -webkit-box-pack: justify;
@@ -10890,16 +10921,10 @@ input::placeholder {
                 flex-direction: row; }
         .modal-header[data-txt="less"] .btn {
           -webkit-box-flex: 0;
-              -ms-flex: 0 0 81px;
-                  flex: 0 0 81px; }
+              -ms-flex: 0 0 90px;
+                  flex: 0 0 90px; }
         .modal-header[data-txt="less"] .modal-title {
           width: auto; } }
-  .modal-header .btn-close {
-    background: url("../images/ic-cross.svg") center;
-    background-size: 24px;
-    opacity: 1; }
-    .modal-header .btn-close:hover {
-      opacity: 0.7; }
 
 .modal-title {
   display: -webkit-box;
@@ -10912,8 +10937,7 @@ input::placeholder {
   @media (max-width: 576px) {
     .modal-title {
       width: 100%;
-      font-size: 1em;
-      margin-top: 8px; } }
+      font-size: 1em; } }
   .modal-title img {
     width: 24px;
     margin-right: 8px; }
@@ -13116,7 +13140,7 @@ input::placeholder {
   .img-list-box img {
     height: 100%;
     position: absolute; }
-    @media (max-width: 991px) {
+    @media (max-width: 768px) {
       .img-list-box img {
         width: 100%;
         height: auto; } }
@@ -13966,7 +13990,6 @@ footer .footer-logo {
 /*------------------------測邊選單開始----------------------------*/
 .side-menu {
   margin-top: 54px;
-  padding-top: 30px;
   width: 350px;
   height: calc(100vh - 54px);
   position: fixed;
@@ -13995,102 +14018,119 @@ footer .footer-logo {
       -webkit-transform: rotate(180deg);
           -ms-transform: rotate(180deg);
               transform: rotate(180deg); }
-  .side-menu .side-menu-body {
-    height: calc(100% - 50px);
-    overflow: auto; }
-  .side-menu .accordion-collapse {
-    padding: 0 15px; }
-    @media (max-width: 1200px) {
-      .side-menu .accordion-collapse {
-        padding: 0 8px; } }
-  .side-menu .accordion-header {
-    padding: 10px 15px 0 15px;
-    font-size: 1em; }
-    @media (max-width: 1200px) {
-      .side-menu .accordion-header {
-        padding: 10px 8px 0 8px; } }
-    @media (max-width: 768px) {
-      .side-menu .accordion-header {
-        padding: 6px 8px 0 8px; } }
-  .side-menu .accordion-button {
-    font-size: 1.125em;
-    padding: 10px 16px 10px 24px;
-    color: #426687;
-    margin-bottom: 10px; }
-    @media (max-width: 1200px) {
-      .side-menu .accordion-button {
-        padding: 8px 8px 8px 16px;
-        font-size: 1em;
-        margin-bottom: 8px; } }
-    @media (max-width: 768px) {
-      .side-menu .accordion-button {
-        margin-bottom: 6px; } }
-    .side-menu .accordion-button::after {
-      width: 24px;
-      background: url("../images/ic-arrow.svg");
-      background-size: contain; }
-  .side-menu .accordion-item {
-    border: none;
-    border-bottom: 1px solid #F0F0F0; }
-  .side-menu .accordion-button:not(.collapsed) {
-    font-weight: 500;
-    color: #3C9BEF;
-    background: #D9F0FF;
-    border-left: 7px solid #3C9BEF;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    border-radius: 0;
-    padding: 10px 20px 10px 15px;
-    margin-bottom: 0; }
-    @media (max-width: 1200px) {
-      .side-menu .accordion-button:not(.collapsed) {
-        border-left: 5px solid #3C9BEF;
-        padding: 8px 12px 8px 12px; } }
-    .side-menu .accordion-button:not(.collapsed)::after {
-      width: 24px;
-      background: url("../images/ic-arrow-active.svg");
-      background-size: contain; }
-    .side-menu .accordion-button:not(.collapsed) img {
-      -webkit-filter: invert(48%) sepia(65%) saturate(526%) hue-rotate(166deg) brightness(103%) contrast(94%);
-              filter: invert(48%) sepia(65%) saturate(526%) hue-rotate(166deg) brightness(103%) contrast(94%); }
-  .side-menu .accordion-body {
-    background: #F2FBFB;
-    margin-bottom: 10px;
-    border-radius: 0 0 5px 5px;
-    padding: 15px 10px; }
-    .side-menu .accordion-body .input-group {
-      width: calc(100% - 40px) !important; }
-  .side-menu .accordion-sub-body {
-    font-size: 0.9em;
-    position: relative;
-    padding: 10px 15px 0 40px; }
-    .side-menu .accordion-sub-body:after {
-      content: "";
-      display: block;
-      height: 100%;
-      width: 1px;
-      background: #9FD3F5;
-      position: absolute;
-      left: 23px;
-      top: 0; }
-  .side-menu .copyright {
-    position: absolute;
-    left: 0;
-    bottom: 15px;
-    font-size: 0.8em; }
-    @media (max-width: 1200px) {
-      .side-menu .copyright {
-        font-size: 0.7em;
-        bottom: 5px; } }
-  .side-menu-link {
+
+.side-menu-body {
+  height: calc(100vh - 50px);
+  position: relative; }
+  .side-menu-body iframe {
+    height: calc(100vh - 50px); }
+
+.side-menu-wrapper {
+  padding-top: 10px; }
+
+.accordion-collapse {
+  padding: 0 15px; }
+  @media (max-width: 1200px) {
+    .accordion-collapse {
+      padding: 0 8px; } }
+
+.accordion-header {
+  padding: 10px 15px 0 15px;
+  font-size: 1em; }
+  @media (max-width: 1200px) {
+    .accordion-header {
+      padding: 10px 8px 0 8px; } }
+  @media (max-width: 768px) {
+    .accordion-header {
+      padding: 6px 8px 0 8px; } }
+
+.accordion-button {
+  font-size: 1.125em;
+  padding: 10px 16px 10px 24px;
+  color: #426687;
+  margin-bottom: 10px; }
+  @media (max-width: 1200px) {
+    .accordion-button {
+      padding: 8px 8px 8px 16px;
+      font-size: 1em;
+      margin-bottom: 8px; } }
+  @media (max-width: 768px) {
+    .accordion-button {
+      margin-bottom: 6px; } }
+  .accordion-button::after {
+    width: 24px;
+    background: url("../images/ic-arrow.svg");
+    background-size: contain; }
+
+.accordion-item {
+  border: none;
+  border-bottom: 1px solid #F0F0F0; }
+
+.accordion-button:not(.collapsed) {
+  font-weight: 500;
+  color: #3C9BEF;
+  background: #D9F0FF;
+  border-left: 7px solid #3C9BEF;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  padding: 10px 20px 10px 15px;
+  margin-bottom: 0; }
+  @media (max-width: 1200px) {
+    .accordion-button:not(.collapsed) {
+      border-left: 5px solid #3C9BEF;
+      padding: 8px 12px 8px 12px; } }
+  .accordion-button:not(.collapsed)::after {
+    width: 24px;
+    background: url("../images/ic-arrow-active.svg");
+    background-size: contain; }
+  .accordion-button:not(.collapsed) img {
+    -webkit-filter: invert(48%) sepia(65%) saturate(526%) hue-rotate(166deg) brightness(103%) contrast(94%);
+            filter: invert(48%) sepia(65%) saturate(526%) hue-rotate(166deg) brightness(103%) contrast(94%); }
+
+.accordion-body {
+  background: #F2FBFB;
+  margin-bottom: 10px;
+  border-radius: 0 0 5px 5px;
+  padding: 15px 10px; }
+  .accordion-body .input-group {
+    width: calc(100% - 40px) !important; }
+
+.accordion-sub-body {
+  font-size: 0.9em;
+  position: relative;
+  padding: 10px 15px 0 40px; }
+  .accordion-sub-body:after {
+    content: "";
     display: block;
-    background: #f8f8f7;
-    color: #555;
-    padding-top: 10px;
-    padding-bottom: 10px; }
-    .side-menu-link:hover {
-      background: #fff !important;
-      color: #426687; }
+    height: 100%;
+    width: 1px;
+    background: #9FD3F5;
+    position: absolute;
+    left: 23px;
+    top: 0; }
+
+.copyright {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  font-size: 0.8em;
+  background: #fff;
+  padding: 10px 0; }
+  @media (max-width: 420px) {
+    .copyright {
+      font-size: 0.7em;
+      bottom: 10px; } }
+
+.side-menu-link {
+  display: block;
+  background: #f8f8f7;
+  color: #555;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  .side-menu-link:hover {
+    background: #fff !important;
+    color: #426687; }
 
 .side-menu-toggler {
   width: 26px;
@@ -14185,7 +14225,8 @@ footer .footer-logo {
     margin-left: 0; }
 
 .map-content {
-  height: calc(100vh - 54px); }
+  height: calc(100vh - 54px);
+  overflow: hidden; }
   .map-content.open {
     height: calc(100vh - 314px); }
   .map-content.default {
@@ -14195,6 +14236,10 @@ footer .footer-logo {
       height: calc(100vh - 46px); } }
   .map-content iframe {
     height: 100%; }
+
+.map-content-box {
+  width: 100%;
+  height: 100vh; }
 
 .side-info {
   height: 260px;
@@ -14348,7 +14393,7 @@ hr {
   background: #3C9BEF !important;
   border: 1px solid #3C9BEF !important; }
 
-#filter-box {
+.filter-box {
   position: absolute;
   right: 16px;
   top: 60px;
@@ -14358,13 +14403,14 @@ hr {
           box-shadow: 0 0 8px #999;
   border: 0;
   border-radius: 5px;
-  background: #fff; }
+  background: #fff;
+  overflow: hidden; }
   @media (max-width: 576px) {
-    #filter-box {
+    .filter-box {
       width: 280px;
       top: 100px;
       right: 10px; } }
-  #filter-box:before {
+  .filter-box:before {
     content: "";
     position: absolute;
     display: block;
@@ -14374,8 +14420,14 @@ hr {
     right: 12px;
     top: -13px; }
     @media (max-width: 576px) {
-      #filter-box:before {
+      .filter-box:before {
         right: 5px; } }
+
+.filter-box-item {
+  width: 33.33%; }
+  @media (max-width: 576px) {
+    .filter-box-item {
+      width: 50%; } }
 
 /*------------------------登入頁設定開始----------------------------*/
 .wrapper[data-bg="login"] {

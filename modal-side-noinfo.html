@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<title>行政院農業委員會農田水利署桃園管理處 - 不動產巡查資訊管理系統</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="行政院農業委會員農田水利署桃園管理處,不動產巡查資訊管理系統,管理系統,不動產巡查">
+	<meta name="description" content="不動產巡查資訊管理系統" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:site_name" content="不動產巡查資訊管理系統" />
+	<meta property="og:image" content="assets/images/fb-img.png" />
+	<!--FB分享設定-->
+
+	<link rel="icon" href="assets/images/favicon.png" type="image/ico" />
+	<!--iconfont設定-->
+	<link rel="stylesheet" href="assets/style/all.css">
+	<!--css設定-->
+</head>
+
+<body>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
+	<div class="side-info-body h-100 bg-pale-color">
+    <div class="row justify-content-between align-items-center flex-wrap g-0 h-100">
+        <div class="col-md-6 d-flex font-xs mb-3">
+            <p class="tertiary-color me-3">今日巡查筆數：0</p>
+            <p class="tertiary-color">累積巡查筆數：0</p>
+        </div>
+        <div class="col-md-6 d-flex mb-3">
+            <div class="input-group btn-input-group ms-auto me-2">
+                <input type="text" class="form-control form-control-sm bd-primary-light-color"
+                    placeholder="搜尋圖層" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-sm bd-primary-light-color" type="button" id="button-addon2">
+                    <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
+                </button>
+            </div>
+            <a href="#filter-box1" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed"
+                title="篩選" data-bs-toggle="collapse">
+                <img src="./assets/images/ic-filter.svg" alt="篩選icon">
+            </a>
+            <div class="collapse filter-box" id="filter-box1">
+                <iframe src="modal-filter-box.html" frameborder="0" scrolling="no"
+                    id="filterBox1" onload="this.height=100" class="w-100"></iframe>
+                <script type="text/javascript">
+                    window.setInterval("reinitIframe('filterBox1')", 200);
+                </script>
+            </div>
+        </div>
+        <div class="col-12 notice-box bg-white tertiary-color" data-content="search-no-info">
+            <img src="./assets/images/ic-search-off.svg" alt="查無相關資料icon"> 查無相關資料
+        </div>
+    </div>
+</div>
+<!-- SCRIPTS -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/footable.js"></script>
+    <script src="assets/js/moment-with-locales.min.js"></script>
+    <script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript">
+        $('.table').footable();
+
+        $(".js-side-info-body").find('button').click(function () {
+            let linkTarget = $(this).attr("data-bs-target");
+            window.parent.$(linkTarget).modal("show");
+        });
+
+        function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+    </script>
+</body>
+
+</html>

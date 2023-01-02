@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>行政院農業委員會農田水利署桃園管理處 - 不動產巡查資訊管理系統</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="行政院農業委會員農田水利署桃園管理處,不動產巡查資訊管理系統,管理系統,不動產巡查">
+    <meta name="description" content="不動產巡查資訊管理系統" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:site_name" content="不動產巡查資訊管理系統" />
+    <meta property="og:image" content="assets/images/fb-img.png" />
+    <!--FB分享設定-->
+
+    <link rel="icon" href="assets/images/favicon.png" type="image/ico" />
+    <!--iconfont設定-->
+    <link rel="stylesheet" href="assets/style/all.css">
+    <!--css設定-->
+</head>
+
+<body>
+    <div class="side-info-body h-100 bg-pale-color js-side-info-body">
+        <div class="row g-0">
+            <div class="col-sm-6 d-flex font-xs mb-3">
+                <button class="btn btn-sm btn-dark-secondary-xdark-color rounded-pill me-2" data-bs-toggle="modal"
+                    data-bs-target="#info-export">
+                    <img src="./assets/images/ic-export.svg" alt="匯出Excel icon" class="me-1"> 匯出Excel
+                </button>
+                <button class="btn btn-sm btn-dark-special-color rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#info-search">
+                    <img src="./assets/images/ic-fact-check-light.svg" alt="條件查詢 icon" class="me-1"> 條件查詢
+                </button>
+            </div>
+            <div class="col-sm-6 d-flex mb-3">
+                <div class="input-group btn-input-group ms-auto me-2">
+                    <input type="text" class="form-control form-control-sm bd-primary-light-color" placeholder="搜尋圖層"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-sm bd-primary-light-color" type="button" id="button-addon2">
+                        <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
+                    </button>
+                </div>
+                <a href="#filter-box2" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed"
+                    title="篩選" data-bs-toggle="collapse">
+                    <img src="./assets/images/ic-filter.svg" alt="篩選icon">
+                </a>
+                <div class="collapse filter-box" id="filter-box2">
+                    <iframe src="modal-filter-box.html" frameborder="0" scrolling="no" id="filterBox2"
+                        onload="this.height=100" class="w-100"></iframe>
+                    <script type="text/javascript">
+                        window.setInterval("reinitIframe('filterBox2')", 200);
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="info-table-wrapper scroll">
+            <table class="table mb-0 bg-white" data-toggle-column="last" id="side-info-table">
+                <thead>
+                    <tr>
+                        <!--<th data-breakpoints="xs sm md" data-title="DOB">Date of Birth</th>-->
+                        <th width="80" data-breakpoints="xs">年度</th>
+                        <th width="80" data-breakpoints="xs sm">照片數</th>
+                        <th width="140" data-breakpoints="xs">巡查時間</th>
+                        <th width="140" data-breakpoints="xs sm">巡查人員</th>
+                        <th width="80" data-breakpoints="xs sm md">縣市</th>
+                        <th width="140" width="100">鄉鎮市區</th>
+                        <th width="80">地段</th>
+                        <th width="80">地號</th>
+                        <th width="80" data-breakpoints="xs sm md">村里別</th>
+                        <th width="80" data-breakpoints="xs sm md">使用人</th>
+                        <th width="140" data-breakpoints="xs">風險分級</th>
+                        <th width="140" data-breakpoints="xs"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>111</td>
+                        <td>2</td>
+                        <td>2022-04-26 16:20</td>
+                        <td>王曉明</td>
+                        <td>台中市</td>
+                        <td>西屯區</td>
+                        <td>地段地段</td>
+                        <td>153</td>
+                        <td>村里別</td>
+                        <td>使用人</td>
+                        <td>2</td>
+                        <td>
+                            <button class="btn p-1" title="檢視" data-bs-toggle="modal" data-bs-target="#info-view">
+                                <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                            </button>
+                            <button class="btn p-1" title="編輯" data-bs-toggle="modal" data-bs-target="#info-edit">
+                                <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>2</td>
+                        <td>2022-04-26 16:20</td>
+                        <td>王曉明</td>
+                        <td>台中市</td>
+                        <td>西屯區</td>
+                        <td>地段地段</td>
+                        <td>153</td>
+                        <td>村里別</td>
+                        <td>使用人</td>
+                        <td>2</td>
+                        <td>
+                            <button class="btn p-1" title="檢視" data-bs-toggle="modal" data-bs-target="#info-view">
+                                <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                            </button>
+                            <button class="btn p-1" title="編輯" data-bs-toggle="modal" data-bs-target="#info-edit">
+                                <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>2</td>
+                        <td>2022-04-26 16:20</td>
+                        <td>王曉明</td>
+                        <td>台中市</td>
+                        <td>西屯區</td>
+                        <td>地段地段</td>
+                        <td>153</td>
+                        <td>村里別</td>
+                        <td>使用人</td>
+                        <td>2</td>
+                        <td>
+                            <button class="btn p-1" title="檢視" data-bs-toggle="modal" data-bs-target="#info-view">
+                                <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                            </button>
+                            <button class="btn p-1" title="編輯" data-bs-toggle="modal" data-bs-target="#info-edit">
+                                <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>2</td>
+                        <td>2022-04-26 16:20</td>
+                        <td>王曉明</td>
+                        <td>台中市</td>
+                        <td>西屯區</td>
+                        <td>地段地段</td>
+                        <td>153</td>
+                        <td>村里別</td>
+                        <td>使用人</td>
+                        <td>2</td>
+                        <td>
+                            <button class="btn p-1" title="檢視" data-bs-toggle="modal" data-bs-target="#info-view">
+                                <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                            </button>
+                            <button class="btn p-1" title="編輯" data-bs-toggle="modal" data-bs-target="#info-edit">
+                                <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>2</td>
+                        <td>2022-04-26 16:20</td>
+                        <td>王曉明</td>
+                        <td>台中市</td>
+                        <td>西屯區</td>
+                        <td>地段地段</td>
+                        <td>153</td>
+                        <td>村里別</td>
+                        <td>使用人</td>
+                        <td>2</td>
+                        <td>
+                            <button class="btn p-1" title="檢視" data-bs-toggle="modal" data-bs-target="#info-view">
+                                <img src="./assets/images/ic-view.svg" alt="檢視icon">
+                            </button>
+                            <button class="btn p-1" title="編輯" data-bs-toggle="modal" data-bs-target="#info-edit">
+                                <img src="./assets/images/ic-edit.svg" alt="檢視icon">
+                            </button>
+                            <script type="text/javascript">
+                                $(".js-side-info-body").find('button').click(function () {
+                                    let linkTarget = $(this).attr("data-bs-target");
+                                    window.parent.$(linkTarget).modal("show");
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/footable.js"></script>
+    <script src="assets/js/moment-with-locales.min.js"></script>
+    <script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript">
+        $('.table').footable();
+
+        $(".js-side-info-body").find('button').click(function () {
+            let linkTarget = $(this).attr("data-bs-target");
+            window.parent.$(linkTarget).modal("show");
+        });
+
+        function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+    </script>
+</body>
+
+</html>

@@ -21,567 +21,57 @@
 </head>
 
 <body>
-	<!----------------視窗開始-------------------->
-<!-- 條件查詢視窗 -->
-<div class="modal fade" tabindex="-1" id="info-search">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header" data-txt="less">
-                <h5 class="modal-title"><img src="./assets/images/ic-fact-check.svg" alt="條件查詢icon"> 條件查詢</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body px-4">
-                <div class="bg-primary-xxlight-color p-3">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="search-year" class="me-2">年度</label>
-                                <select class="form-select form-select-sm" id="search-year"
-                                    style="width: calc(100% - 70px);">
-                                    <option selected="">請選擇</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="search-town" class="me-2">鄉鎮</label>
-                                <select class="form-select form-select-sm" id="search-town"
-                                    style="width: calc(100% - 70px);">
-                                    <option selected="">請選擇</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="search-check" class="me-2">是否巡查</label>
-                                <select class="form-select form-select-sm" id="search-check"
-                                    style="width: calc(100% - 70px);">
-                                    <option selected="">全部</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="search-city" class="me-2">縣市</label>
-                                <select class="form-select form-select-sm" id="search-city"
-                                    style="width: calc(100% - 70px);">
-                                    <option selected="">請選擇</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="search-lot" class="me-2">地段</label>
-                                <select class="form-select form-select-sm" id="search-lot"
-                                    style="width: calc(100% - 70px);">
-                                    <option selected="">請選擇</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer border-0 pt-0">
-                <button type="button" class="btn btn-sm btn-dark-primary-weak-color px-5 mx-auto my-0 js-info-opener"
-                    data-target="#hasinfo" data-bs-dismiss="modal">查詢</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- 檢視視窗 -->
-<div class="modal fade" tabindex="-1" id="info-view">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"><img src="./assets/images/ic-view.svg" alt="檢視icon"> 檢視 登革熱高風險資料</h5>
-                <div class="d-flex align-items-center ms-auto">
-                    <button class="btn btn-sm btn-dark-primary-color py-0 ms-auto me-2">
-                        <img src="./assets/images/ic-edit-light.svg" alt="編輯" class="me-1">編輯
-                    </button>
-                    <button type="button" class="btn-close ms-1" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="modal-body px-0 px-md-4">
-                <div class="container">
-                    <ul class="row tag-list mb-4">
-                        <li class="col-md-3 mb-2 mb-md-0">
-                            <span class="tag-list-tag">年度</span>
-                            <p>111</p>
-                        </li>
-                        <li class="col-md-5 mb-2 mb-md-0">
-                            <span class="tag-list-tag">巡查時間</span>
-                            <p>2022-04-18 11:40:26</p>
-                        </li>
-                        <li class="col-md-4 mb-2 mb-md-0">
-                            <span class="tag-list-tag">巡查人員</span>
-                            <p>王小名</p>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <h6 class="modal-body-title d-flex align-items-center mb-2">
-                            <img src="./assets/images/ic-sticky-note.svg" alt="基本資料icon" class="me-1"> 基本資料
-                        </h6>
-                    </div>
-                    <div class="bg-primary-xxlight-color p-3 mb-4">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-cadastre" class="me-2">地籍</label>
-                                    <input class="form-control" type="text" value="地籍地籍地籍"
-                                        style="width: calc(100% - 40px)" id="info-cadastre" readonly>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-village" class="me-2">村里別</label>
-                                    <input class="form-control" type="text" value="村里別" style="width: calc(100% - 55px)"
-                                        id="info-village" readonly>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-address" class="me-2">地址</label>
-                                    <input class="form-control" type="text" value="地址" style="width: calc(100% - 40px)"
-                                        id="info-address" readonly>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-8">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-fram-name" class="me-2">農菜果園名稱</label>
-                                    <input class="form-control" type="text" value="名稱" style="width: calc(100% - 101px)"
-                                        id="info-fram-name" readonly>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-grading" class="me-2">登革熱風險分級</label>
-                                    <input class="form-control" type="text" style="width: calc(100% - 116px)"
-                                        id="info-grading" value="2" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h6 class="modal-body-title d-flex align-items-center mb-2">
-                            <img src="./assets/images/ic-contact.svg" alt="聯絡資料icon" class="me-1"> 聯絡資料
-                        </h6>
-                    </div>
-                    <div class="bg-primary-xxlight-color p-3 mb-4">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="contact-user" class="me-2">聯絡/承租/使用人</label>
-                                    <input class="form-control" type="text" value="王小名"
-                                        style="width: calc(100% - 130px)" id="contact-user" readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="contact-phone" class="me-2">聯絡電話</label>
-                                    <input class="form-control" type="text" value="0960123123"
-                                        style="width: calc(100% - 70px)" id="contact-phone" readonly>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="contact-address" class="me-2">聯絡地址</label>
-                                    <input class="form-control" type="text" value="地址" style="width: calc(100% - 70px)"
-                                        id="contact-address" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-primary-xlight-color rounded px-3 py-1 mb-3">
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0">照片檢視</h6>
-                            <p class="primary-color">限 jpg、png 格式，最多十張照片</p>
-                        </div>
-                    </div>
-                    <div class="row img-list justify-content-center">
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- 編輯視窗 -->
-<div class="modal fade" tabindex="-1" id="info-edit">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"><img src="./assets/images/ic-view.svg" alt="檢視icon"> 檢視 登革熱高風險資料</h5>
-                <div class="d-flex align-items-center ms-auto">
-                    <button class="btn btn-sm btn-dark-secondary-xdark-color py-0 ms-auto me-2">
-                        <img src="./assets/images/ic-save.svg" alt="儲存" class="me-1">儲存
-                    </button>
-                    <button type="button" class="btn-close ms-1" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="modal-body px-0 px-md-4">
-                <div class="container">
-                    <ul class="row tag-list mb-4">
-                        <li class="col-md-3 mb-2 mb-md-0">
-                            <span class="tag-list-tag">年度</span>
-                            <p>111</p>
-                        </li>
-                        <li class="col-md-5 mb-2 mb-md-0">
-                            <span class="tag-list-tag">巡查時間</span>
-                            <p>2022-04-18 11:40:26</p>
-                        </li>
-                        <li class="col-md-4 mb-2 mb-md-0">
-                            <span class="tag-list-tag">巡查人員</span>
-                            <p>王小名</p>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <h6 class="modal-body-title d-flex align-items-center mb-2">
-                            <img src="./assets/images/ic-sticky-note.svg" alt="基本資料icon" class="me-1"> 基本資料
-                        </h6>
-                    </div>
-                    <div class="bg-primary-xxlight-color p-3 mb-4">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-cadastre" class="me-2">地籍</label>
-                                    <input class="form-control" type="text" value="地籍地籍地籍"
-                                        style="width: calc(100% - 40px)" id="info-cadastre">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-village" class="me-2">村里別</label>
-                                    <input class="form-control" type="text" value="村里別" style="width: calc(100% - 55px)"
-                                        id="info-village">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-address" class="me-2">地址</label>
-                                    <input class="form-control" type="text" value="地址" style="width: calc(100% - 40px)"
-                                        id="info-address">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-8">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-fram-name" class="me-2">農菜果園名稱</label>
-                                    <input class="form-control" type="text" value="名稱" style="width: calc(100% - 101px)"
-                                        id="info-fram-name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="info-grading" class="me-2">登革熱風險分級</label>
-                                    <input class="form-control" type="text" style="width: calc(100% - 116px)"
-                                        id="info-grading" value="2">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h6 class="modal-body-title d-flex align-items-center mb-2">
-                            <img src="./assets/images/ic-contact.svg" alt="聯絡資料icon" class="me-1"> 聯絡資料
-                        </h6>
-                    </div>
-                    <div class="bg-primary-xxlight-color p-3 mb-4">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="contact-user" class="me-2">聯絡/承租/使用人</label>
-                                    <input class="form-control" type="text" value="王小名"
-                                        style="width: calc(100% - 130px)" id="contact-user">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="contact-phone" class="me-2">聯絡電話</label>
-                                    <input class="form-control" type="text" value="0960123123"
-                                        style="width: calc(100% - 70px)" id="contact-phone">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="contact-address" class="me-2">聯絡地址</label>
-                                    <input class="form-control" type="text" value="地址" style="width: calc(100% - 70px)"
-                                        id="contact-address">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-primary-xlight-color rounded px-3 py-1 mb-3">
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0">照片檢視</h6>
-                            <p class="primary-color">限 jpg、png 格式，最多十張照片</p>
-                        </div>
-                    </div>
-                    <div class="row img-list">
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2">
-                            <button class="btn img-list-add w-100">
-                                <img src="./assets/images/ic-add-pic.svg" class="mb-2">
-                                新增照片
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
+	<!----------------視窗示意開始-------------------->
+
 <!-- 查詢匯出視窗-未輸入條件 -->
-<div class="modal fade" tabindex="-1" id="info-export-default">
+<div class="modal fade" id="info-export-default" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"><img src="./assets/images/ic-download.svg" alt="查詢/匯出icon"> 查詢/匯出 登革熱高風險表功能</h5>
-                <div class="d-flex align-items-center ms-auto">
-                    <button type="button" class="btn-close ms-1" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="modal-body px-0 px-md-4">
-                <div class="container-fluid">
-                    <div class="bg-primary-xxlight-color p-3 mb-3">
-                        <div class="row gx-4">
-                            <div class="col-xl-8">
-                                <div class="row gx-3">
-                                    <div class="col-md-4">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <label for="export-from" class="me-2">巡查日期(起)</label>
-                                            <div class="form-group" style="width: calc(100% - 107px)">
-                                                <div class="input-group date" id="export-from"
-                                                    data-target-input="nearest">
-                                                    <input type="text"
-                                                        class="form-control form-control-sm datetimepicker-input border-end-0"
-                                                        data-target="#datetimepicker1" />
-                                                    <div class="input-group-append" data-target="#datetimepicker1"
-                                                        data-toggle="datetimepicker">
-                                                        <div class="input-group-text"><img
-                                                                src="./assets/images/ic-calendar_today.svg">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <label for="export-to" class="me-2">巡查日期(迄)</label>
-                                            <div class="form-group" style="width: calc(100% - 107px)">
-                                                <div class="input-group date" id="export-to"
-                                                    data-target-input="nearest">
-                                                    <input type="text"
-                                                        class="form-control form-control-sm datetimepicker-input border-end-0"
-                                                        data-target=" #datetimepicker1" />
-                                                    <div class="input-group-append" data-target="#datetimepicker2"
-                                                        data-toggle="datetimepicker">
-                                                        <div class="input-group-text"><img
-                                                                src="./assets/images/ic-calendar_today.svg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <label for="export-unit" class="me-2">巡查單位</label>
-                                            <select class="form-select form-select-sm" id="export-unit"
-                                                style="width: calc(100% - 70px);">
-                                                <option selected="">蘆竹地政事務所</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="export-member" class="me-2">巡查人員</label>
-                                    <select class="form-select form-select-sm me-2" id="export-member"
-                                        style="width: calc(50% - 39px);">
-                                        <option selected="">全部</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <input class="form-control form-control-sm" type="text" value="人員關鍵字"
-                                        style="width: calc(50% - 39px)" placeholder="請輸入人員關鍵字" id="export-member-key">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row gx-4">
-                            <div class="col-xl-8">
-                                <div class="row gx-3">
-                                    <div class="col-sm-4">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <label for="export-city" class="me-2">縣市</label>
-                                            <select class="form-select form-select-sm" id="export-city"
-                                                style="width: calc(100% - 70px);">
-                                                <option selected="">全部</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <label for="export-town" class="me-2">鄉鎮市區</label>
-                                            <select class="form-select form-select-sm" id="export-town"
-                                                style="width: calc(100% - 70px);">
-                                                <option selected="">全部</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <label for="export-lot" class="me-2">地段</label>
-                                            <select class="form-select form-select-sm" id="export-lot"
-                                                style="width: calc(100% - 40px);">
-                                                <option selected="">全部</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="row gx-3">
-                                    <div class="col-sm-6">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <label for="export-level" class="me-2">風險分級</label>
-                                            <input class="form-control form-control-sm" type="text" value="2"
-                                                style="width: calc(100% - 70px)" id="export-level">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                            <button class="btn btn-sm btn-dark-secondary-xdark-color py-1 ms-auto me-2">
-                                                <img src="./assets/images/ic-cloud.svg" alt="匯出" class="me-1">匯出
-                                            </button>
-                                            <button class="btn btn-sm btn-dark-primary-color py-1">
-                                                <img src="./assets/images/ic-export-search.svg" alt="查詢" class="me-1">查詢
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="notice-box primary-weak-color" data-content="export-no-entry">
-                                <img src="./assets/images/ic-search-start.svg" alt="輸入搜尋條件icon" class="me-1">
-                                請輸入搜尋條件後點選查詢
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button type="button" class="btn-close ms-1" data-bs-dismiss="modal"></button>
+            <iframe src="modal-info-export-default.html" frameborder="0" scrolling="no" id="infoExportDefault"
+                onload="this.height=100"></iframe>
+            <script type="text/javascript">
+                window.setInterval("reinitIframe('infoExportDefault')", 200);
+            </script>
         </div>
     </div>
 </div>
 
-<!-- 個人資料視窗 -->
-<div class="modal fade" tabindex="-1" id="info-personal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header" data-txt="less">
-                <h5 class="modal-title"><img src="./assets/images/ic-person.svg" alt="個人資料icon" class="mt-1"> 個人資料</h5>
-                <div class="d-flex align-items-center ms-auto">
-                    <button class="btn btn-sm btn-dark-primary-color py-0 ms-auto me-2">
-                        <img src="./assets/images/ic-edit-light.svg" alt="編輯" class="me-1">編輯
-                    </button>
-                    <button type="button" class="btn-close ms-1" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="modal-body px-0 px-md-4">
-                <div class="container">
-                    <div class="row">
-                        <h6 class="modal-body-title d-flex align-items-center mb-2">
-                            <img src="./assets/images/ic-sticky-note.svg" alt="基本資料icon" class="me-1"> 使用者資料
-                        </h6>
-                    </div>
-                    <div class="bg-primary-xxlight-color p-3">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="personal-name" class="me-2">名稱</label>
-                                    <input class="form-control" type="text" value="testuser"
-                                        style="width: calc(100% - 40px)" id="personal-name" readonly>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="personal-account" class="me-2">帳號</label>
-                                    <input class="form-control" type="text" value="testuser"
-                                        style="width: calc(100% - 40px)" id="personal-account" readonly>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="personal-department" class="me-2">部門</label>
-                                    <input class="form-control" type="text" value="群立科技"
-                                        style="width: calc(100% - 40px)" id="personal-department" readonly>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="personal-mail" class="me-2">信箱</label>
-                                    <input class="form-control" type="text" value="testuser@geoforce.com.tw"
-                                        style="width: calc(100% - 40px)" id="personal-mail" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!----------------視窗結束-------------------->
 <header>
     <nav class="navbar navbar-expand-md fixed-top px-2 px-md-3">
@@ -956,8 +446,8 @@
                                 <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
                             </button>
                         </div>
-                        <a href="#filter-box" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed" title="篩選"
-                            data-bs-toggle="collapse">
+                        <a href="#filter-box" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed"
+                            title="篩選" data-bs-toggle="collapse">
                             <img src="./assets/images/ic-filter.svg" alt="篩選icon">
                         </a>
                         <div class="collapse" id="filter-box">
@@ -1074,7 +564,8 @@
                                 <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
                             </button>
                         </div>
-                        <a href="#filter-box" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed" title="篩選" data-bs-toggle="collapse">
+                        <a href="#filter-box" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed"
+                            title="篩選" data-bs-toggle="collapse">
                             <img src="./assets/images/ic-filter.svg" alt="篩選icon">
                         </a>
                         <div class="collapse" id="filter-box">
@@ -1307,38 +798,6 @@
     <!-----查有資料結束----->
 </div>
 <!-----主要內容結束----->
-</div>
-		
-		<!-- SCRIPTS -->
-		<script src="assets/js/jquery-3.3.1.min.js"></script>
-		<script src="assets/js/bootstrap.bundle.js"></script>
-		<script src="assets/js/script.js"></script>
-		<script src="assets/js/footable.js"></script>
-		<script src="assets/js/moment-with-locales.min.js"></script>
-		<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
-		<script type="text/javascript">
-			$('.table').footable();
-
-			$(function () {
-				$('#export-from').datetimepicker({
-					format: 'L',
-					locale: 'zh-tw',
-					defaultDate: new Date(),  
-				});
-				$('#export-to').datetimepicker({
-					format: 'L',
-					locale: 'zh-tw',
-					defaultDate: new Date(),
-				});
-
-				/*匯出視窗-未輸入條件示意*/
-				$('#info-export-default').modal("show");
-				/*匯出視窗-查無資料示意*/
-				$('#info-export-noinfo').modal("show");
-				/*個人資料視窗-編輯示意*/
-				$('#info-personal-edit').modal("show");
-			});
-		</script>
 </body>
 
 </html>

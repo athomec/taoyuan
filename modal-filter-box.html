@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<title>行政院農業委員會農田水利署桃園管理處 - 不動產巡查資訊管理系統</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="行政院農業委會員農田水利署桃園管理處,不動產巡查資訊管理系統,管理系統,不動產巡查">
+	<meta name="description" content="不動產巡查資訊管理系統" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:site_name" content="不動產巡查資訊管理系統" />
+	<meta property="og:image" content="assets/images/fb-img.png" />
+	<!--FB分享設定-->
+
+	<link rel="icon" href="assets/images/favicon.png" type="image/ico" />
+	<!--iconfont設定-->
+	<link rel="stylesheet" href="assets/style/all.css">
+	<!--css設定-->
+</head>
+
+<body>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
+	    <div class="p-3 pb-2 font-xs d-flex flex-wrap">
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-photo">
+                <label class="form-check-label" for="filter-photo">
+                    照片數
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-property">
+                <label class="form-check-label" for="filter-property">
+                    財產別
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-check">
+                <label class="form-check-label" for="filter-check">
+                    巡查時間
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-member">
+                <label class="form-check-label" for="filter-member">
+                    巡查人員
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-city">
+                <label class="form-check-label" for="filter-city">
+                    縣市
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-town">
+                <label class="form-check-label" for="filter-town">
+                    鄉鎮市區
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-lot">
+                <label class="form-check-label" for="filter-lot">
+                    地段
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-number">
+                <label class="form-check-label" for="filter-number">
+                    地號
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-coordinate">
+                <label class="form-check-label" for="filter-coordinate">
+                    座標
+                </label>
+            </div>
+        </div>
+        <div class="filter-box-item">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="filter-building">
+                <label class="form-check-label" for="filter-building">
+                    地上物
+                </label>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

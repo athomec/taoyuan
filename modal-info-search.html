@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<title>行政院農業委員會農田水利署桃園管理處 - 不動產巡查資訊管理系統</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="行政院農業委會員農田水利署桃園管理處,不動產巡查資訊管理系統,管理系統,不動產巡查">
+	<meta name="description" content="不動產巡查資訊管理系統" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:site_name" content="不動產巡查資訊管理系統" />
+	<meta property="og:image" content="assets/images/fb-img.png" />
+	<!--FB分享設定-->
+
+	<link rel="icon" href="assets/images/favicon.png" type="image/ico" />
+	<!--iconfont設定-->
+	<link rel="stylesheet" href="assets/style/all.css">
+	<!--css設定-->
+</head>
+
+<body>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
+	<div class="modal-header" data-txt="less">
+    <h5 class="modal-title"><img src="./assets/images/ic-fact-check.svg" alt="條件查詢icon"> 條件查詢</h5>
+</div>
+<div class="modal-body px-4">
+    <div class="bg-primary-xxlight-color p-3">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-end align-items-center mb-2">
+                    <label for="search-year" class="me-2">年度</label>
+                    <select class="form-select form-select-sm" id="search-year"
+                        style="width: calc(100% - 80px);">
+                        <option selected="">請選擇</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-end align-items-center mb-2">
+                    <label for="search-town" class="me-2">鄉鎮</label>
+                    <select class="form-select form-select-sm" id="search-town"
+                        style="width: calc(100% - 80px);">
+                        <option selected="">請選擇</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-end align-items-center mb-2">
+                    <label for="search-check" class="me-2">是否巡查</label>
+                    <select class="form-select form-select-sm" id="search-check"
+                        style="width: calc(100% - 80px);">
+                        <option selected="">全部</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-end align-items-center mb-2">
+                    <label for="search-city" class="me-2">縣市</label>
+                    <select class="form-select form-select-sm" id="search-city"
+                        style="width: calc(100% - 80px);">
+                        <option selected="">請選擇</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-end align-items-center mb-2">
+                    <label for="search-lot" class="me-2">地段</label>
+                    <select class="form-select form-select-sm" id="search-lot"
+                        style="width: calc(100% - 80px);">
+                        <option selected="">請選擇</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer border-0 pt-0">
+    <button type="button" class="btn btn-sm btn-dark-primary-weak-color px-5 mx-auto my-0 js-info-opener"
+        data-target="#hasinfo" data-bs-dismiss="modal">查詢</button>
+</div>
+<script>
+    $(".js-info-opener").click(function () {
+		window.parent.$("#info-search").find('.btn-close').trigger("click");
+	});
+</script>
+</body>
+
+</html>

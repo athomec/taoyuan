@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<title>行政院農業委員會農田水利署桃園管理處 - 不動產巡查資訊管理系統</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="行政院農業委會員農田水利署桃園管理處,不動產巡查資訊管理系統,管理系統,不動產巡查">
+	<meta name="description" content="不動產巡查資訊管理系統" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:site_name" content="不動產巡查資訊管理系統" />
+	<meta property="og:image" content="assets/images/fb-img.png" />
+	<!--FB分享設定-->
+
+	<link rel="icon" href="assets/images/favicon.png" type="image/ico" />
+	<!--iconfont設定-->
+	<link rel="stylesheet" href="assets/style/all.css">
+	<!--css設定-->
+</head>
+
+<body>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
+	<div class="modal-header">
+    <h5 class="modal-title"><img src="./assets/images/ic-download.svg" alt="查詢/匯出icon"> 查詢/匯出登革熱高風險表功能</h5>
+</div>
+<div class="modal-body px-0 px-md-4">
+    <div class="container-fluid">
+        <div class="bg-primary-xxlight-color p-3 mb-3">
+            <div class="row gx-4">
+                <div class="col-xl-8">
+                    <div class="row gx-3">
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="export-from" class="me-2">巡查日期(起)</label>
+                                <div class="form-group" style="width: calc(100% - 107px)">
+                                    <div class="input-group date" id="export-from"
+                                        data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control form-control-sm datetimepicker-input border-end-0"
+                                            data-target="#export-from" />
+                                        <div class="input-group-append" data-target="#export-from"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><img
+                                                    src="./assets/images/ic-calendar_today.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="export-to" class="me-2">巡查日期(迄)</label>
+                                <div class="form-group" style="width: calc(100% - 107px)">
+                                    <div class="input-group date" id="export-to"
+                                        data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control form-control-sm datetimepicker-input border-end-0"
+                                            data-target=" #export-to" />
+                                        <div class="input-group-append" data-target="#export-to"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text">
+                                                <img src="./assets/images/ic-calendar_today.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="export-unit" class="me-2">巡查單位</label>
+                                <select class="form-select form-select-sm" id="export-unit"
+                                    style="width: calc(100% - 80px);">
+                                    <option selected="">蘆竹地政事務所</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="export-member" class="me-2">巡查人員</label>
+                        <select class="form-select form-select-sm me-2" id="export-member"
+                            style="width: calc(50% - 45px);">
+                            <option selected="">全部</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <input class="form-control form-control-sm" type="text" value="人員關鍵字"
+                            style="width: calc(50% - 39px)" placeholder="請輸入人員關鍵字" id="export-member-key">
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-4">
+                <div class="col-xl-8">
+                    <div class="row gx-3">
+                        <div class="col-sm-4">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="export-city" class="me-2">縣市</label>
+                                <select class="form-select form-select-sm" id="export-city"
+                                    style="width: calc(100% - 80px);">
+                                    <option selected="">全部</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="export-town" class="me-2">鄉鎮市區</label>
+                                <select class="form-select form-select-sm" id="export-town"
+                                    style="width: calc(100% - 80px);">
+                                    <option selected="">全部</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="export-lot" class="me-2">地段</label>
+                                <select class="form-select form-select-sm" id="export-lot"
+                                    style="width: calc(100% - 50px);">
+                                    <option selected="">全部</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="row gx-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="export-level" class="me-2">風險分級</label>
+                                <input class="form-control form-control-sm" type="text" value="2"
+                                    style="width: calc(100% - 80px)" id="export-level">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <button class="btn btn-sm btn-dark-secondary-xdark-color py-1 ms-auto me-2">
+                                    <img src="./assets/images/ic-cloud.svg" alt="匯出" class="me-1">匯出
+                                </button>
+                                <button class="btn btn-sm btn-dark-primary-color py-1">
+                                    <img src="./assets/images/ic-export-search.svg" alt="查詢" class="me-1">查詢
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="table-wrapper scroll">
+                    <table class="table" data-toggle-column="last">
+                        <thead>
+                            <tr>
+                                <th data-breakpoints="xs">財產編號1</th>
+                                <th>鄉鎮市區</th>
+                                <th>地段</th>
+                                <th>地號</th>
+                                <th data-breakpoints="xs sm md">村里別</th>
+                                <th data-breakpoints="xs">地址</th>
+                                <th data-breakpoints="xs">農菜果園名稱</th>
+                                <th data-breakpoints="xs">連絡人</th>
+                                <th data-breakpoints="xs sm md">連絡電話</th>
+                                <th data-breakpoints="xs sm md">聯絡地址</th>
+                                <th data-breakpoints="xs">風險分級</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1040201-0002-0000009</td>
+                                <td>鶯歌區</td>
+                                <td>尖山腳段</td>
+                                <td>1320</td>
+                                <td>村里別</td>
+                                <td>地址地址地址</td>
+                                <td>農菜果園名稱</td>
+                                <td>連絡人</td>
+                                <td>0912123123</td>
+                                <td>聯絡地址</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<title>行政院農業委員會農田水利署桃園管理處 - 不動產巡查資訊管理系統</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="行政院農業委會員農田水利署桃園管理處,不動產巡查資訊管理系統,管理系統,不動產巡查">
+	<meta name="description" content="不動產巡查資訊管理系統" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:site_name" content="不動產巡查資訊管理系統" />
+	<meta property="og:image" content="assets/images/fb-img.png" />
+	<!--FB分享設定-->
+
+	<link rel="icon" href="assets/images/favicon.png" type="image/ico" />
+	<!--iconfont設定-->
+	<link rel="stylesheet" href="assets/style/all.css">
+	<!--css設定-->
+</head>
+
+<body>
+	<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/footable.js"></script>
+	<script src="assets/js/moment-with-locales.min.js"></script>
+	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+	$('.table').footable();
+});
+		$(function () {
+				$('#export-from').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+				$('#export-to').datetimepicker({
+					format: 'L',
+					locale: 'zh-tw',
+					defaultDate: new Date(),
+				});
+		});
+	//iframe高度控制
+		function reinitIframe(item) {
+			var iframe = document.getElementById(item);
+			try {
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			} catch (ex) { }
+		}
+	</script>
+	<div class="modal-header">
+    <h5 class="modal-title"><img src="./assets/images/ic-view.svg" alt="檢視icon"> 檢視 登革熱高風險資料</h5>
+    <div class="d-flex align-items-center ms-auto">
+        <button class="btn btn-sm btn-dark-primary-color py-0 ms-auto me-5">
+            <img src="./assets/images/ic-edit-light.svg" alt="編輯" class="me-1">編輯
+        </button>
+    </div>
+</div>
+<div class="modal-body px-0 px-md-4">
+    <div class="container">
+        <ul class="row tag-list mb-4">
+            <li class="col-md-3 mb-2 mb-md-0">
+                <span class="tag-list-tag">年度</span>
+                <p>111</p>
+            </li>
+            <li class="col-md-5 mb-2 mb-md-0">
+                <span class="tag-list-tag">巡查時間</span>
+                <p>2022-04-18 11:40:26</p>
+            </li>
+            <li class="col-md-4 mb-2 mb-md-0">
+                <span class="tag-list-tag">巡查人員</span>
+                <p>王小名</p>
+            </li>
+        </ul>
+        <div class="row">
+            <h6 class="modal-body-title d-flex align-items-center mb-2">
+                <img src="./assets/images/ic-sticky-note.svg" alt="基本資料icon" class="me-1"> 基本資料
+            </h6>
+        </div>
+        <div class="bg-primary-xxlight-color p-3 mb-4">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="info-cadastre" class="me-2">地籍</label>
+                        <input class="form-control" type="text" value="地籍地籍地籍"
+                            style="width: calc(100% - 50px)" id="info-cadastre" readonly>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="info-village" class="me-2">村里別</label>
+                        <input class="form-control" type="text" value="村里別" style="width: calc(100% - 65px)"
+                            id="info-village" readonly>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="info-address" class="me-2">地址</label>
+                        <input class="form-control" type="text" value="地址" style="width: calc(100% - 50px)"
+                            id="info-address" readonly>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-8">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="info-fram-name" class="me-2">農菜果園名稱</label>
+                        <input class="form-control" type="text" value="名稱" style="width: calc(100% - 118px)"
+                            id="info-fram-name" readonly>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="info-grading" class="me-2">登革熱風險分級</label>
+                        <input class="form-control" type="text" style="width: calc(100% - 130px)"
+                            id="info-grading" value="2" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h6 class="modal-body-title d-flex align-items-center mb-2">
+                <img src="./assets/images/ic-contact.svg" alt="聯絡資料icon" class="me-1"> 聯絡資料
+            </h6>
+        </div>
+        <div class="bg-primary-xxlight-color p-3 mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="contact-user" class="me-2">聯絡/承租/使用人</label>
+                        <input class="form-control" type="text" value="王小名"
+                            style="width: calc(100% - 150px)" id="contact-user" readonly>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="contact-phone" class="me-2">聯絡電話</label>
+                        <input class="form-control" type="text" value="0960123123"
+                            style="width: calc(100% - 80px)" id="contact-phone" readonly>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <label for="contact-address" class="me-2">聯絡地址</label>
+                        <input class="form-control" type="text" value="地址" style="width: calc(100% - 85px)"
+                            id="contact-address" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-primary-xlight-color rounded px-3 py-1 mb-3">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0">照片檢視</h6>
+                <p class="primary-color">限 jpg、png 格式，最多十張照片</p>
+            </div>
+        </div>
+        <div class="row img-list justify-content-center">
+            <div class="col-6 col-sm-3 col-md-2 mb-2">
+                <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 mb-2">
+                <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 mb-2">
+                <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 mb-2">
+                <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 mb-2">
+                <a href="#" class="img-list-box"><img src="./assets/images/demo-pic.jpg"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

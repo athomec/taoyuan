@@ -11,11 +11,11 @@ $(function () {//JS開頭
 
 	//---------------------側邊選單設定------------------------
 	$(".js-info-opener").click(function () {
-		$(".js-side-info").removeClass('open');
 		let content = $(this).attr("data-target");
-		$(".js-handler").addClass('open');
-		$(".js-map-content").addClass('open');
-		$(content).addClass('open');
+		window.parent.$(".js-side-info").removeClass('open');
+		window.parent.$(".js-handler").addClass('open');
+		window.parent.$(".js-map-content").addClass('open');
+		window.parent.$(content).addClass('open');
 	})
 	$(".js-info-closer").click(function () {
 		$(".js-handler").removeClass('open');
@@ -112,11 +112,23 @@ $(function () {//JS開頭
 	});
 
 
+
+
+	/*匯出視窗-未輸入條件示意*/
+	$("#info-export-default").modal("show");
+	/*匯出視窗-查無資料示意*/
+	$('#info-export-noinfo').modal("show");
+	/*個人資料視窗-編輯示意*/
+	$('#info-personal-edit').modal("show");
+
+	
+
+
 	RESIZE();
 
-	/*$(window).resize(function () {
+	$(window).resize(function () {
 		RESIZE();
-	});*/
+	});
 
 	function RESIZE() {
 		WINDOWH = $(window).height();
