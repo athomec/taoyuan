@@ -17,6 +17,7 @@
 	<link rel="icon" href="assets/images/favicon.png" type="image/ico" />
 	<!--iconfont設定-->
 	<link rel="stylesheet" href="assets/style/all.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
 	<!--css設定-->
 </head>
 
@@ -28,6 +29,7 @@
 	<script src="assets/js/footable.js"></script>
 	<script src="assets/js/moment-with-locales.min.js"></script>
 	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
 	<script type="text/javascript">
 		jQuery(function($){
 	$('.table').footable();
@@ -195,44 +197,288 @@
             type="button">
             <img src="./assets/images/ic-chevron-left.svg" alt="導引列表icon">
         </button>
-        <div class="side-menu-body bg-white">
-            <iframe src="modal-menu.html" name="sideMenu" frameborder="0" scrolling="yes" class="w-100 scroll"></iframe>
-            <p class="side-menu-txt d-black w-100 copyright tertiary-color text-center">行政院農業委員會<br class="d-inline d-xl-none">農田水利署桃園管理處
+            <div class="side-menu-body bg-white scroll">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                <img src="./assets/images/ic-layer.svg" alt="圖層清單icon" class="me-2 me-md-3"> 圖層清單
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex">
+                                    <div class="input-group btn-input-group mb-3">
+                                        <input type="text" class="form-control form-control-sm bd-primary-light-color"
+                                            placeholder="搜尋圖層" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn btn-sm bd-primary-light-color" type="button" id="button-addon2">
+                                            <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
+                                        </button>
+                                    </div>
+                                    <a href="#" class="btn circle-btn  btn-dark-primary-color p-0 ms-auto" title="清除圖層"><img
+                                            src="./assets/images/ic-unsupported.svg" alt=""></a>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        灌區地籍(110)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                    <label class="form-check-label" for="defaultCheck2">
+                                        縣市界(110)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                    <label class="form-check-label" for="defaultCheck3">
+                                        鄉鎮市區界(110)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                    <label class="form-check-label" for="defaultCheck4">
+                                        村里界(110)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                                    <label class="form-check-label" for="defaultCheck5">
+                                        地段
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                <img src="./assets/images/ic-locate.svg" alt="定位功能icon" class="me-2 me-md-3"> 定位功能
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+            
+                                <button class="side-menu-sub btn" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#administrative" aria-expanded="false">
+                                    <div class="side-menu-icon"><img src="./assets/images/ic-bag.svg" alt="行政區定位icon"></div>
+                                    行政區定位
+                                </button>
+                                <div class="collapse" id="administrative" data-bs-parent=".accordion-body">
+                                    <div class="accordion-sub-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="city">縣市</label>
+                                            <select class="form-select form-select-sm" id="city" style="width: calc(100% - 40px);">
+                                                <option selected>請選擇</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="town">鄉鎮</label>
+                                            <select class="form-select form-select-sm" id="town" style="width: calc(100% - 40px);">
+                                                <option selected>請選擇</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="village">村里</label>
+                                            <select class="form-select form-select-sm" id="village"
+                                                style="width: calc(100% - 40px);">
+                                                <option selected>請選擇</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-grid">
+                                            <button class="btn btn-sm btn-dark-primary-weak-color">定位</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="side-menu-sub btn mt-3" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#cadastre" aria-expanded="false">
+                                    <div class="side-menu-icon"><img src="./assets/images/ic-aim.svg" alt="地籍定位"></div>
+                                    地籍定位
+                                </button>
+                                <div class="collapse" id="cadastre" data-bs-parent=".accordion-body">
+                                    <div class="accordion-sub-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="cadastre-city">縣市</label>
+                                            <select class="form-select form-select-sm" id="cadastre-city"
+                                                style="width: calc(100% - 40px);">
+                                                <option selected>請選擇</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="cadastre-town">鄉鎮</label>
+                                            <select class="form-select form-select-sm" id="cadastre-town"
+                                                style="width: calc(100% - 40px);">
+                                                <option selected>請選擇</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="cadastre-lot">地段</label>
+                                            <select class="form-select form-select-sm" id="cadastre-lot"
+                                                style="width: calc(100% - 40px);">
+                                                <option selected>請選擇</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="cadastre-number">地號</label>
+                                            <select class="form-select form-select-sm" id="cadastre-number"
+                                                style="width: calc(100% - 40px);">
+                                                <option selected>請選擇</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-grid">
+                                            <button class="btn btn-dark-primary-weak-color btn-sm">定位</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                <img src="./assets/images/ic-check.svg" alt="外業巡查icon" class="me-2 me-md-3"> 外業巡查
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex js-info-opener" data-target="#noinfo">
+                                            <img src="./assets/images/ic-domain.svg" alt="不動產巡查" class="me-2"><span>不動產巡查</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <img src="./assets/images/ic-record.svg" alt="巡查紀錄管理icon" class="me-2 me-md-3"> 巡查紀錄管理
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                            data-bs-target="#info-search">
+                                            <img src="./assets/images/ic-danger.svg" alt="不動產巡查(內業)" class="me-2">
+                                            <span>不動產巡查(內業)</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                            data-bs-target="#info-search">
+                                            <img src="./assets/images/ic-forbidden.svg" alt="無權占用" class="me-2"><span>無權占用</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                            data-bs-target="#info-search">
+                                            <img src="./assets/images/ic-estate.svg" alt="有無違反法令(租約)"
+                                                class="me-2"><span>有無違反法令(租約)</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                            data-bs-target="#info-search">
+                                            <img src="./assets/images/ic-risk.svg" alt="登革熱高風險" class="me-2"><span>登革熱高風險</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex" data-bs-toggle="modal"
+                                            data-bs-target="#info-search">
+                                            <img src="./assets/images/ic-emergency.svg" alt="緊急通報" class="me-2"><span>緊急通報</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                <img src="./assets/images/ic-analyse.svg" alt="填報統計icon" class="me-2 me-md-3"> 填報統計
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex">
+                                            <img src="./assets/images/ic-apartment.svg" alt="巡查單位統計"
+                                                class="me-2"><span>巡查單位統計</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex">
+                                            <img src="./assets/images/ic-worker.svg" alt="巡查人員統計" class="me-2"><span>巡查人員統計</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="side-menu-item btn d-flex">
+                                            <img src="./assets/images/ic-statistics.svg" alt="完成率統計" class="me-2"><span>完成率統計</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="d-black w-100 copyright tertiary-color text-center">行政院農業委員會<br class="d-inline d-xl-none">農田水利署桃園管理處
             </p>
-        </div>
     </div>
     <!-----側邊選單結束----->
     <!-----主要內容開始----->
     <div class="side-content js-side-content">
-        <div class="map-content js-map-content">
-            <iframe src="modal-map.html" frameborder="0" scrolling="no" id="mapContent"
-                onload="this.height=100" class="w-100"></iframe>
-            <script type="text/javascript">
-                window.setInterval("reinitIframe('mapContent')", 200);
-            </script>
-        </div>
-        <!-----資料標題開始----->
-        <div class="side-info-header bg-primary-weak-color white js-handler">
-            <img src="./assets/images/ic-risk.svg" alt="登革熱高風險icon" class="me-1"> 登革熱高風險資料
-            <button class="btn p-0 ms-auto js-info-closer"><img src="./assets/images/ic-close-light.svg"
-                    alt="關閉icon"></button>
+        <!-----地圖開始----->
+        <div class="map-content js-map-content" style="background: url('assets/images/map-demo.jpg'); background-size: cover;">
         </div>
         <!-----查無資料開始----->
-        <div class="side-info js-side-info bg-pale-color scroll" id="noinfo">
-            <iframe src="modal-side-noinfo.html" frameborder="0" scrolling="no" id="sideNoInfo"
-                onload="this.height=100" class="w-100" name="side-info"></iframe>
-            <script type="text/javascript">
-                window.setInterval("reinitIframe('sideNoInfo')", 200);
-            </script>
+        <div class="side-info js-side-info bg-pale-color" id="noinfo">
+            <button class="btn p-0 ms-auto side-info-closer js-info-closer"><img src="./assets/images/ic-close-light.svg" alt="關閉icon"></button>
+            <iframe src="modal-side-noinfo.html" frameborder="0" scrolling="auto" id="sideInfo" class="w-100"></iframe>
         </div>
         <!-----查無資料結束----->
         <!-----查有資料開始----->
-        <div class="side-info js-side-info bg-pale-color" id="hasinfo">
-            <iframe src="modal-side-info.html" frameborder="0" scrolling="no" id="sideInfo"
-                onload="this.height=100" class="w-100" name="sideInfo"></iframe>
-            <script type="text/javascript">
-                window.setInterval("reinitIframe('sideInfo')", 200);
-            </script>
+        <div class="side-info js-side-info bg-pale-color scroll" id="hasinfo">
+            <button class="btn p-0 ms-auto side-info-closer js-info-closer"><img src="./assets/images/ic-close-light.svg"
+                    alt="關閉icon"></button>
+            <iframe src="modal-side-info.html" frameborder="0" scrolling="auto" id="sideInfo" class="w-100"></iframe>
         </div>
     </div>
     <!-----查有資料結束----->

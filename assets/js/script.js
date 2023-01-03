@@ -27,42 +27,19 @@ $(function () {//JS開頭
 		$(".js-side-content").toggleClass("close");
 	})
 	//---------------------視窗拖曳設定------------------------
-	var handler = document.querySelector('.js-handler');
-	var wrapper = handler.closest('.js-side-content');
-	var boxA = wrapper.querySelector('.js-map-content');
-	var boxB = wrapper.querySelector('.js-side-info');
-	var isHandlerDragging = false;
-	var isHandlertoching = false;
+	$('.js-map-content').resizable();
+	const resizeObserver = new ResizeObserver(onResize);
+	resizeObserver.observe(document.querySelector('.js-map-content'));
 
-	document.addEventListener('mousedown', function (e) {
-		// If mousedown event is fired from .handler, toggle flag to true
-		if (e.target === handler) {
-			isHandlerDragging = true;
-		}
-	});
+	function onResize(e) {
+		$(".js-side-info").addClass("hide");
+		document.addEventListener('mouseup', function (e) {
+			$(".js-side-info").removeClass("hide");
+		});
+		
+	}
 
-	document.addEventListener('mousemove', function (e) {
-		// Don't do anything if dragging flag is false
-		if (!isHandlerDragging) {
-			return false;
-		}
-		// Get offset
-		var containerOffsetTop = wrapper.offsetTop;
-		var containerOffsetBottom = wrapper.offsetBottom;
-		// Get x-coordinate of pointer relative to container
-		var pointerRelativeXpos = e.clientY - containerOffsetTop;
-		var pointerRelativeXpos2 = e.clientY - e.offsetTop + e.offsetHeight;
-		var boxAminWidth = 30;
-		boxA.style.height = (Math.max(boxAminWidth, pointerRelativeXpos - 2)) + 'px';
-		//boxA.style.flexGrow = 0;
-		boxB.style.height = (Math.max(boxAminWidth, pointerRelativeXpos2 - 8)) + 'px';
-		//boxB.style.flexGrow = 0;
-	});
-	document.addEventListener('mouseup', function (e) {
-		// Turn off dragging flag when user mouse is up
-		isHandlerDragging = false;
-	});
-
+	
 	//---------------------頁籤設定------------------------
 	$('.js-toggle-menu').find(".js-toggle-button").click(function () {
 		$(this).toggleClass("active");

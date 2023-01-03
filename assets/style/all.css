@@ -13990,6 +13990,7 @@ footer .footer-logo {
 /*------------------------測邊選單開始----------------------------*/
 .side-menu {
   margin-top: 54px;
+  padding-top: 30px;
   width: 350px;
   height: calc(100vh - 54px);
   position: fixed;
@@ -14020,13 +14021,8 @@ footer .footer-logo {
               transform: rotate(180deg); }
 
 .side-menu-body {
-  height: calc(100vh - 50px);
-  position: relative; }
-  .side-menu-body iframe {
-    height: calc(100vh - 50px); }
-
-.side-menu-wrapper {
-  padding-top: 10px; }
+  height: calc(100% - 50px);
+  overflow: auto; }
 
 .accordion-collapse {
   padding: 0 15px; }
@@ -14236,10 +14232,8 @@ footer .footer-logo {
       height: calc(100vh - 46px); } }
   .map-content iframe {
     height: 100%; }
-
-.map-content-box {
-  width: 100%;
-  height: 100vh; }
+  .map-content.ui-state-disabled {
+    opacity: 1; }
 
 .side-info {
   height: 260px;
@@ -14248,21 +14242,31 @@ footer .footer-logo {
       -ms-flex: 1;
           flex: 1;
   overflow: auto;
-  display: none; }
+  display: none;
+  position: relative; }
   .side-info.open {
     display: block; }
+  .side-info.hide {
+    pointer-events: none; }
   .side-info .input-group {
     max-width: 350px; }
+  .side-info-closer {
+    position: absolute;
+    right: 16px;
+    top: 7px; }
+  .side-info iframe {
+    height: calc(100% - 10px); }
 
 .side-info-header {
   padding: 7px 24px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  cursor: ns-resize;
-  display: none; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100; }
   @media (max-width: 420px) {
     .side-info-header {
       padding: 7px 10px; } }
@@ -14275,6 +14279,7 @@ footer .footer-logo {
     display: flex; }
 
 .side-info-body {
+  margin-top: 40px;
   padding: 15px 24px;
   position: relative; }
   @media (max-width: 420px) {
