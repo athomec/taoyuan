@@ -13,13 +13,12 @@ $(function () {//JS開頭
 	$(".js-info-opener").click(function () {
 		let content = $(this).attr("data-target");
 		window.parent.$(".js-side-info").removeClass('open');
-		window.parent.$(".js-handler").addClass('open');
-		window.parent.$(".js-map-content").addClass('open');
+		window.parent.$(".js-map-content").css('height',' calc(100vh - 314px)');
 		window.parent.$(content).addClass('open');
 	})
 	$(".js-info-closer").click(function () {
-		$(".js-handler").removeClass('open');
 		$(".js-map-content").removeClass('open');
+		$(".js-map-content").css('height',' calc(100vh - 54px)');
 		$(".js-side-info").removeClass('open');
 	})
 	$(".js-side-menu-toggler").click(function () {

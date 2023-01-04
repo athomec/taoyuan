@@ -14225,8 +14225,6 @@ footer .footer-logo {
   overflow: hidden; }
   .map-content.open {
     height: calc(100vh - 314px); }
-  .map-content.default {
-    height: calc(100vh - 54px) !important; }
   @media (max-width: 768px) {
     .map-content {
       height: calc(100vh - 46px); } }
@@ -14273,10 +14271,6 @@ footer .footer-logo {
   .side-info-header img {
     -webkit-filter: brightness(150);
             filter: brightness(150); }
-  .side-info-header.open {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
 
 .side-info-body {
   margin-top: 40px;
