@@ -29,7 +29,7 @@ $(function () {//JS開頭
 	$('.js-map-content').resizable();
 	const resizeObserver = new ResizeObserver(onResize);
 	resizeObserver.observe(document.querySelector('.js-map-content'));
-
+	
 	function onResize(e) {
 		$(".js-side-info").addClass("hide");
 		document.addEventListener('mouseup', function (e) {
