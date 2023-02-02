@@ -14114,6 +14114,8 @@ footer .footer-logo {
     color: #42AB26; }
     .accordion-subsub:not(.collapsed):after {
       background: url("../images/ic-minus-sub.svg") !important; }
+  .accordion-subsub ~ .accordion-collapse {
+    padding-left: 40px; }
 
 .accordion-item {
   border: none;
