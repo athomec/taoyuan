@@ -14004,7 +14004,7 @@ footer .footer-logo {
           box-shadow: 0 0 10px #999; }
   @media (max-width: 1200px) {
     .side-menu {
-      width: 250px;
+      width: 280px;
       padding-top: 16px; } }
   @media (max-width: 768px) {
     .side-menu {
@@ -14014,7 +14014,7 @@ footer .footer-logo {
     left: -350px; }
     @media (max-width: 1200px) {
       .side-menu.close {
-        left: -250px; } }
+        left: -280px; } }
     .side-menu.close .side-menu-toggler img {
       -webkit-transform: rotate(180deg);
           -ms-transform: rotate(180deg);
