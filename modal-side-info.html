@@ -182,10 +182,9 @@
     <script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
     <script type="text/javascript">
         $('.table').footable({
-            "paging": {
+             "paging": {
                 "enabled": true,
-                "size": 4,
-                "position": "center",
+                "size": 4, 
             },
             "sorting": {
                 "enabled": true
@@ -195,7 +194,7 @@
                 "placeholder": "桃園市 桃園區"
             }
         });
-        $(".js-side-info-body").find('button').click(function () {
+        $(".js-side-info-body").find('button').click(function () {  
             let linkTarget = $(this).attr("data-bs-target");
             window.parent.$(linkTarget).modal("show");
         });

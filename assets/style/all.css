@@ -14538,6 +14538,12 @@ hr {
         flex-wrap: wrap;
     width: 350px;
     border-radius: 8px; }
+    @media (max-width: 576px) {
+      .input-group-btn.open .dropdown-menu {
+        width: 300px; } }
+    @media (max-width: 420px) {
+      .input-group-btn.open .dropdown-menu {
+        width: 280px; } }
     .input-group-btn.open .dropdown-menu li {
       width: 50%; }
       .input-group-btn.open .dropdown-menu li:last-child {
