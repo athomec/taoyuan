@@ -31,22 +31,19 @@
 	<script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
 	<script type="text/javascript">
-		jQuery(function($){
-	$('.table').footable();
-});
 		$(function () {
-				$('#export-from').datetimepicker({
-					format: 'L',
-					locale: 'zh-tw',
-					defaultDate: new Date(),
-				});
-				$('#export-to').datetimepicker({
-					format: 'L',
-					locale: 'zh-tw',
-					defaultDate: new Date(),
-				});
+			$('#export-from').datetimepicker({
+				format: 'L',
+				locale: 'zh-tw',
+				defaultDate: new Date(),
+			});
+			$('#export-to').datetimepicker({
+				format: 'L',
+				locale: 'zh-tw',
+				defaultDate: new Date(),
+			});
 		});
-	//iframe高度控制
+		//iframe高度控制
 		function reinitIframe(item) {
 			var iframe = document.getElementById(item);
 			try {

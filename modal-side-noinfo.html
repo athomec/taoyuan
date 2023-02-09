@@ -30,26 +30,6 @@
             <p class="tertiary-color me-3">今日巡查筆數：0</p>
             <p class="tertiary-color">累積巡查筆數：0</p>
         </div>
-        <div class="col-md-6 d-flex mb-3">
-            <div class="input-group btn-input-group ms-auto me-2">
-                <input type="text" class="form-control form-control-sm bd-primary-light-color"
-                    placeholder="搜尋圖層" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-sm bd-primary-light-color" type="button" id="button-addon2">
-                    <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
-                </button>
-            </div>
-            <a href="#filter-box1" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed"
-                title="篩選" data-bs-toggle="collapse">
-                <img src="./assets/images/ic-filter.svg" alt="篩選icon">
-            </a>
-            <div class="collapse filter-box" id="filter-box1">
-                <iframe src="modal-filter-box.html" frameborder="0" scrolling="no"
-                    id="filterBox1" onload="this.height=100" class="w-100"></iframe>
-                <script type="text/javascript">
-                    window.setInterval("reinitIframe('filterBox1')", 200);
-                </script>
-            </div>
-        </div>
         <div class="col-12 notice-box bg-white tertiary-color" data-content="search-no-info">
             <img src="./assets/images/ic-search-off.svg" alt="查無相關資料icon"> 查無相關資料
         </div>

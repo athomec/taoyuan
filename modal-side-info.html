@@ -25,7 +25,7 @@
         <img src="./assets/images/ic-risk.svg" alt="登革熱高風險icon" class="me-1"> 登革熱高風險資料
     </div>
     <div class="side-info-body h-100 bg-pale-color js-side-info-body">
-        <div class="row g-0">
+        <div class="row g-0 side-info-button">
             <div class="col-sm-6 d-flex font-xs mb-3">
                 <button class="btn btn-sm btn-dark-secondary-xdark-color rounded-pill me-2" data-bs-toggle="modal"
                     data-bs-target="#info-export">
@@ -35,26 +35,6 @@
                     data-bs-target="#info-search">
                     <img src="./assets/images/ic-fact-check-light.svg" alt="條件查詢 icon" class="me-1"> 條件查詢
                 </button>
-            </div>
-            <div class="col-sm-6 d-flex mb-3">
-                <div class="input-group btn-input-group ms-auto me-2">
-                    <input type="text" class="form-control form-control-sm bd-primary-light-color" placeholder="搜尋圖層"
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-sm bd-primary-light-color" type="button" id="button-addon2">
-                        <img src="./assets/images/ic-search-blue.svg" alt="搜尋">
-                    </button>
-                </div>
-                <a href="#filter-box2" class="btn circle-btn btn-dark-secondary-color p-0 filter-btn collapsed"
-                    title="篩選" data-bs-toggle="collapse">
-                    <img src="./assets/images/ic-filter.svg" alt="篩選icon">
-                </a>
-                <div class="collapse filter-box" id="filter-box2">
-                    <iframe src="modal-filter-box.html" frameborder="0" scrolling="no" id="filterBox2"
-                        onload="this.height=100" class="w-100"></iframe>
-                    <script type="text/javascript">
-                        window.setInterval("reinitIframe('filterBox2')", 200);
-                    </script>
-                </div>
             </div>
         </div>
         <div class="info-table-wrapper scroll">
@@ -201,23 +181,35 @@
     <script src="assets/js/moment-with-locales.min.js"></script>
     <script src="assets/js/tempusdominus-bootstrap-4.min.js"></script>
     <script type="text/javascript">
-        $('.table').footable();
-
+        $('.table').footable({
+            "paging": {
+                "enabled": true,
+                "size": 4,
+                "position": "center",
+            },
+            "sorting": {
+                "enabled": true
+            },
+            "filtering": {
+                "enabled": true,
+                "placeholder": "桃園市 桃園區"
+            }
+        });
         $(".js-side-info-body").find('button').click(function () {
             let linkTarget = $(this).attr("data-bs-target");
             window.parent.$(linkTarget).modal("show");
         });
 
         function reinitIframe(item) {
-			var iframe = document.getElementById(item);
-			try {
-				var bHeight = iframe.contentWindow.document.body.scrollHeight;
-				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
-				var height = Math.max(bHeight, dHeight);
-				iframe.height = height;
-				console.log(height);
-			} catch (ex) { }
-		}
+            var iframe = document.getElementById(item);
+            try {
+                var bHeight = iframe.contentWindow.document.body.scrollHeight;
+                var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+                var height = Math.max(bHeight, dHeight);
+                iframe.height = height;
+                console.log(height);
+            } catch (ex) { }
+        }
     </script>
 </body>
 
