@@ -13201,6 +13201,9 @@ input::placeholder {
         width: 100%;
         height: auto; } }
 
+.img-list[data-con="view"] .img-list-box:after {
+  display: none; }
+
 .img-list-add {
   display: -webkit-box;
   display: -ms-flexbox;
