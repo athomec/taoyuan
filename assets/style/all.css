@@ -15021,12 +15021,6 @@ hr {
   color: #6c757d;
   cursor: not-allowed; }
 
-.bootstrap-datetimepicker-widget table th.prev {
-  background: url("../images/ic-prev.svg") no-repeat center; }
-
-.bootstrap-datetimepicker-widget table th.next {
-  background: url("../images/ic-next.svg") no-repeat center; }
-
 .bootstrap-datetimepicker-widget table th.prev::after {
   content: "Previous Month"; }
 
