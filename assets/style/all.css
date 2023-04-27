@@ -14028,7 +14028,8 @@ input::placeholder {
         margin-right: 10px;
         width: 24px; } }
   .nav-link:hover {
-    opacity: 0.8; }
+    opacity: 0.8;
+    color: #fff; }
 
 /*------------------------footer開始----------------------------*/
 .gotop {
