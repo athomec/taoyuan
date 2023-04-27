@@ -12,6 +12,12 @@ $(function () {//JS開頭eaize
 	//---------------------側邊選單設定------------------------
 	$(".js-info-opener").click(function () {
 		let content = $(this).attr("data-target");
+		$(".js-side-info").removeClass('open');
+		$(".js-map-content-wrapper").css('height', ' calc(100vh - 314px)');
+		$(content).addClass('open');
+	})
+	$(".js-inside-info-opener").click(function () {
+		let content = $(this).attr("data-target");
 		window.parent.$(".js-side-info").removeClass('open');
 		window.parent.$(".js-map-content-wrapper").css('height', ' calc(100vh - 314px)');
 		window.parent.$(content).addClass('open');
