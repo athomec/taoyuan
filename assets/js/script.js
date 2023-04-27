@@ -1,4 +1,4 @@
-$(function () {//JS開頭
+$(function () {//JS開頭eaize
 
 	var WINDOW = $(window).width();//視窗寬度
 	var WINDOWH = $(window).height();//視窗高度
@@ -13,32 +13,51 @@ $(function () {//JS開頭
 	$(".js-info-opener").click(function () {
 		let content = $(this).attr("data-target");
 		window.parent.$(".js-side-info").removeClass('open');
-		window.parent.$(".js-map-content").css('height',' calc(100vh - 314px)');
+		window.parent.$(".js-map-content-wrapper").css('height', ' calc(100vh - 314px)');
 		window.parent.$(content).addClass('open');
 	})
 	$(".js-info-closer").click(function () {
-		$(".js-map-content").removeClass('open');
-		$(".js-map-content").css('height',' calc(100vh - 54px)');
+		$(".js-map-content-wrapper").removeClass('open');
+		$(".js-map-content-wrapper").css('height', ' calc(100vh - 54px)');
 		$(".js-side-info").removeClass('open');
 	})
 	$(".js-side-menu-toggler").click(function () {
 		$('.js-side-menu').toggleClass("close");
 		$(".js-side-content").toggleClass("close");
 	})
+	//地圖比對
+	$(".js-map-comparison").click(function () {
+		$(".js-map-content").toggleClass("compare");
+		$(".js-map-content-compare").toggleClass("compare");
+		if ($(".js-map-content-compare").hasClass("compare")) {
+			return false;
+		} else {
+			$(".js-map-content-compare").css("width", "");
+		}
+	});
+
+
 	//---------------------視窗拖曳設定------------------------
-	$('.js-map-content').resizable();
+	$('.js-map-content-wrapper').resizable({
+		handles: 's'
+	});
 	const resizeObserver = new ResizeObserver(onResize);
-	resizeObserver.observe(document.querySelector('.js-map-content'));
-	
+	resizeObserver.observe(document.querySelector('.js-map-content-wrapper'));
+
 	function onResize(e) {
 		$(".js-side-info").addClass("hide");
 		document.addEventListener('mouseup', function (e) {
 			$(".js-side-info").removeClass("hide");
 		});
-		
 	}
 
-	
+	$('.js-map-content-compare').resizable({//地圖比對
+		handles: 'w'
+	});
+	const resizeObserver1 = new ResizeObserver(onResizeMap);
+	resizeObserver1.observe(document.querySelector('.js-map-content-compare'));
+
+
 	//---------------------頁籤設定------------------------
 	$('.js-toggle-menu').find(".js-toggle-button").click(function () {
 		$(this).toggleClass("active");
@@ -79,13 +98,6 @@ $(function () {//JS開頭
 		var wh = $(window).height();//視窗高度
 	});
 
-	//主選單設定
-	$(".navbar-nav").find('a').click(function () {
-		var section = $(this).attr("href");
-		$("html,body").animate({ scrollTop: $(section).offset().top - 66 }, 300);
-		$(".navbar-collapse").removeClass("show");
-		return false;
-	});
 
 
 
@@ -97,7 +109,7 @@ $(function () {//JS開頭
 	/*個人資料視窗-編輯示意*/
 	$('#info-personal-edit').modal("show");
 
-	
+
 
 
 	RESIZE();

@@ -14326,18 +14326,89 @@ footer .footer-logo {
     width: 100%;
     margin-left: 0; }
 
-.map-content {
+.map-content-wrapper {
   height: calc(100vh - 54px);
-  overflow: hidden; }
-  .map-content.open {
-    height: calc(100vh - 314px); }
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative; }
   @media (max-width: 768px) {
-    .map-content {
+    .map-content-wrapper {
       height: calc(100vh - 46px); } }
-  .map-content iframe {
-    height: 100%; }
-  .map-content.ui-state-disabled {
+  .map-content-wrapper.open {
+    height: calc(100vh - 314px); }
+  .map-content-wrapper.ui-state-disabled {
     opacity: 1; }
+
+.map-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  overflow: hidden; }
+  .map-content-inside {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+    .map-content-inside.full {
+      width: 100vw !important; }
+  .map-content.compare {
+    width: 50%;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+    @media (max-width: 576px) {
+      .map-content.compare {
+        width: 100%;
+        height: 50%; } }
+
+.map-compare {
+  width: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  left: 0 !important;
+  margin-left: 10px;
+  overflow: hidden;
+  border-left: 2px solid #DEF3D2; }
+  .map-compare .map-content-inside {
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: 0; }
+    .map-compare .map-content-inside.full {
+      width: 100vw !important; }
+  .map-compare.compare {
+    width: 50%;
+    margin-left: 0; }
+    @media (max-width: 576px) {
+      .map-compare.compare {
+        width: 100%;
+        height: 50%;
+        border-left: 0;
+        border-top: 2px solid #DEF3D2; } }
 
 .side-info {
   height: 260px;

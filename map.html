@@ -169,7 +169,7 @@
                         </div>
                     </li>
                     <li class="nav-item js-tag-button">
-                        <a class="nav-link active" href="#" title="地圖比對">
+                        <a class="nav-link js-map-comparison" href="#" title="地圖比對">
                             <img src="./assets/images/ic-flip.svg" alt="地圖比對">
                             <p class="d-inline-block d-md-none">地圖比對</p>
                         </a>
@@ -209,7 +209,7 @@
 <div class="d-flex">
     <div class="side-menu js-side-menu" id="side-menu">
         <button
-            class="btn btn-dark-secondary-color border-0 side-menu-toggler js-side-menu-toggler p-0 d-none d-md-flex"
+            class="btn btn-dark-secondary-color border-0 side-menu-toggler js-side-menu-toggler js-map-inside-toggler p-0 d-none d-md-flex"
             type="button">
             <img src="./assets/images/ic-chevron-left.svg" alt="導引列表icon">
         </button>
@@ -284,11 +284,12 @@
                                 文字文字文字文字
                             </button>
                             <div id="collapse1-2" class="accordion-collapse collapse" data-bs-parent="#collapse1">
-                                <button class="accordion-button accordion-subsub collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse1-2-1">
+                                <button class="accordion-button accordion-subsub collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse1-2-1">
                                     文字文字文字
                                 </button>
-                                <div id="collapse1-2-1" class="accordion-collapse collapse pt-1" data-bs-parent="#collapse1-2">
+                                <div id="collapse1-2-1" class="accordion-collapse collapse pt-1"
+                                    data-bs-parent="#collapse1-2">
                                     <div class="form-check mb-1">
                                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                         <label class="form-check-label" for="defaultCheck1">
@@ -320,11 +321,12 @@
                                         </label>
                                     </div>
                                 </div>
-                                <button class="accordion-button accordion-subsub collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse1-2-2">
+                                <button class="accordion-button accordion-subsub collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse1-2-2">
                                     文字文字文字
                                 </button>
-                                <div id="collapse1-2-2" class="accordion-collapse collapse pt-1" data-bs-parent="#collapse1-2">
+                                <div id="collapse1-2-2" class="accordion-collapse collapse pt-1"
+                                    data-bs-parent="#collapse1-2">
                                     <div class="form-check mb-1">
                                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                         <label class="form-check-label" for="defaultCheck1">
@@ -357,16 +359,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="accordion-button accordion-sub collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse1-3">
+                            <button class="accordion-button accordion-sub collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse1-3">
                                 文字文字文字文字
                             </button>
                             <div id="collapse1-3" class="accordion-collapse collapse" data-bs-parent="#collapse1">
-                                <button class="accordion-button accordion-subsub collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse1-3-1">
+                                <button class="accordion-button accordion-subsub collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse1-3-1">
                                     文字文字文字
                                 </button>
-                                <div id="collapse1-3-1" class="accordion-collapse collapse pt-1" data-bs-parent="#collapse1-3">
+                                <div id="collapse1-3-1" class="accordion-collapse collapse pt-1"
+                                    data-bs-parent="#collapse1-3">
                                     <div class="form-check mb-1">
                                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                         <label class="form-check-label" for="defaultCheck1">
@@ -623,8 +626,15 @@
     <!-----主要內容開始----->
     <div class="side-content js-side-content">
         <!-----地圖開始----->
-        <div class="map-content js-map-content"
-            style="background: url('assets/images/map-demo.jpg'); background-size: cover;">
+        <div class="map-content-wrapper js-map-content-wrapper">
+            <div class="map-content js-map-content">
+                <div class="map-content-inside js-map-inside"
+                    style="background: url('assets/images/map-demo.jpg'); background-size: cover;"></div>
+            </div>
+            <div class="map-compare js-map-content-compare">
+                <div class="map-content-inside js-map-inside"
+                    style="background: url('assets/images/map-demo1.jpg'); background-size: cover;"></div>
+            </div>
         </div>
         <!-----查無資料開始----->
         <div class="side-info js-side-info bg-pale-color" id="noinfo">
@@ -644,6 +654,37 @@
 </div>
 <!-----主要內容結束----->
 </div>
+<script type="text/javascript">
+    $(function () {
+        //地圖比對內容器設定
+        function resizeMapInside() {
+            var mapContentWrapper = document.querySelector('.js-map-content-wrapper');
+            var mapInsideList = document.querySelectorAll('.js-map-inside');
+            var mapWidth = mapContentWrapper.offsetWidth;
+            var mapHeight = mapContentWrapper.offsetHeight;
+
+            for (var i = 0; i < mapInsideList.length; i++) {
+                mapInsideList[i].style.width = mapWidth + 'px';
+                mapInsideList[i].style.height = mapHeight + 'px';
+            }
+        }
+
+        // 初始化
+        resizeMapInside();
+
+        // 監聽元素大小變化
+        var observer = new ResizeObserver(function (entries) {
+            // 如果元素大小變化，就重新計算高度和寬度
+            resizeMapInside();
+        });
+        observer.observe(document.querySelector('.js-map-content-wrapper'));
+
+        $('.js-map-inside-toggler').click(function () {
+            $('.js-map-inside').toggleClass('full');
+        })
+
+    });
+</script>
 </body>
 
 </html>
