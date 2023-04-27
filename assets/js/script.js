@@ -18,7 +18,7 @@ $(function () {//JS開頭eaize
 	})
 	$(".js-info-closer").click(function () {
 		$(".js-map-content-wrapper").removeClass('open');
-		$(".js-map-content-wrapper").css('height', ' calc(100vh - 54px)');
+		$(".js-map-content-wrapper").css('height', ' calc(100vh - 46px)');
 		$(".js-side-info").removeClass('open');
 	})
 	$(".js-side-menu-toggler").click(function () {
@@ -54,8 +54,7 @@ $(function () {//JS開頭eaize
 	$('.js-map-content-compare').resizable({//地圖比對
 		handles: 'w'
 	});
-	const resizeObserver1 = new ResizeObserver(onResizeMap);
-	resizeObserver1.observe(document.querySelector('.js-map-content-compare'));
+
 
 
 	//---------------------頁籤設定------------------------
@@ -79,28 +78,6 @@ $(function () {//JS開頭eaize
 
 	});
 
-	//----------------gotop功能-----------------
-	$(".gotop").click(function () {
-		$("html,body").animate({ scrollTop: 0 }, 300);
-		return false;
-	})
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) { //若目前的位置距離網頁頂端>100px
-			$(".gotop").fadeIn("fast");
-			$("header").addClass("godown");
-		} else {
-			$(".gotop").stop().fadeOut("fast");
-			$("header").removeClass("godown");
-		}
-
-		var index = 0;//各單元區塊順序
-		var st = $(window).scrollTop();//現在捲軸位置
-		var wh = $(window).height();//視窗高度
-	});
-
-
-
-
 
 	/*匯出視窗-未輸入條件示意*/
 	$("#info-export-default").modal("show");
@@ -110,23 +87,20 @@ $(function () {//JS開頭eaize
 	$('#info-personal-edit').modal("show");
 
 
-
-
-	RESIZE();
-
 	$(window).resize(function () {
 		RESIZE();
 	});
+	
 
 	function RESIZE() {
 		WINDOWH = $(window).height();
 		WINDOW = $(window).width();
-
 		if (WINDOW < 768) {
-			$('.js-side-menu').addClass("close");
+			$(".js-side-menu").addClass("close");
 			$(".js-side-content").addClass("close");
 		}
 	}
+	RESIZE();
 
 
 })//JS尾端	
