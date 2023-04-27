@@ -14342,6 +14342,12 @@ footer .footer-logo {
   @media (max-width: 768px) {
     .map-content-wrapper {
       height: calc(100vh - 46px); } }
+  @media (max-width: 576px) {
+    .map-content-wrapper {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
   .map-content-wrapper.open {
     height: calc(100vh - 314px); }
   .map-content-wrapper.ui-state-disabled {
