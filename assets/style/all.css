@@ -14371,9 +14371,9 @@ footer .footer-logo {
     height: 100%;
     position: absolute;
     left: 0;
-    top: 0; }
-    .map-content-inside.full {
-      width: 100vw !important; }
+    top: 0;
+    width: 100% !important;
+    height: 100% !important; }
   .map-content.compare {
     width: 50%;
     -ms-flex-negative: 1;
@@ -14399,14 +14399,15 @@ footer .footer-logo {
   left: 0 !important;
   margin-left: 10px;
   overflow: hidden;
-  border-left: 2px solid #DEF3D2; }
+  border-left: 2px solid #DEF3D2;
+  position: relative; }
   .map-compare .map-content-inside {
     right: 0;
     left: auto;
     top: auto;
-    bottom: 0; }
-    .map-compare .map-content-inside.full {
-      width: 100vw !important; }
+    bottom: 0;
+    width: 100% !important;
+    height: 100% !important; }
   .map-compare.compare {
     width: 50%;
     margin-left: 0; }

@@ -57,9 +57,9 @@ $(function () {//JS開頭eaize
 		});
 	}
 
-	$('.js-map-content-compare').resizable({//地圖比對
-		handles: 'w'
-	});
+	/*$('.js-map-content-compare').resizable({//地圖比對
+			handles: 'w'
+		});*/
 
 
 
@@ -96,7 +96,7 @@ $(function () {//JS開頭eaize
 	$(window).resize(function () {
 		RESIZE();
 	});
-	
+
 
 	function RESIZE() {
 		WINDOWH = $(window).height();
